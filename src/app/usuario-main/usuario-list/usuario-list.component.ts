@@ -63,10 +63,10 @@ export class UsuarioListComponent implements OnInit {
       icon: 'info',
       confirmButtonText: 'Aceptar',
       html: `<hr><fieldset>
-        <label>Nombre:</label><span>${usuario.nombre}</span><br>
-        <label>NRC:</label><span>${usuario.apellido}</span><br>
-        <label>Horas:</label><span>${usuario.nacionalidad}</span><br>
-        <label>Área:</label><span>${usuario.telefono}</span><br>
+        <label>Nombre:&nbsp;</label><span>${usuario.nombre}</span><br>
+        <label>NRC: &nbsp;</label><span>${usuario.apellido}</span><br>
+        <label>Horas: &nbsp;</label><span>${usuario.nacionalidad}</span><br>
+        <label>Área: &nbsp;</label><span>${usuario.telefono}</span><br>
       </fieldset>`
     });
   }
