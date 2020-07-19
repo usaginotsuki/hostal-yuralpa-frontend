@@ -19,14 +19,17 @@ export class UsuarioListComponent implements OnInit {
 
   constructor(private userService:UserService) { }
 
-  ngOnInit(): void {
-    this.list();
+ 
+
+  clickMessage = '';
+  onClickMe() {
+    this.clickMessage = 'You are my hero!';
+    console.log("asdqw");
   }
 
   list():void {
     this.userService.list().subscribe(
       result=>{
-        console.log(result);
         this.usuarios=result;
       }
     );
@@ -66,5 +69,8 @@ export class UsuarioListComponent implements OnInit {
         <label>Área:</label><span>${usuario.telefono}</span><br>
       </fieldset>`
     });
+  }
+  ngOnInit(): void {
+    this.list();
   }
 }
