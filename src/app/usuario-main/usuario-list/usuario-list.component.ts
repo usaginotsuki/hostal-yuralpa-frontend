@@ -18,15 +18,6 @@ export class UsuarioListComponent implements OnInit {
   faTrash=faTrash;
 
   constructor(private userService:UserService) { }
-
- 
-
-  clickMessage = '';
-  onClickMe() {
-    this.clickMessage = 'You are my hero!';
-    console.log("asdqw");
-  }
-
   list():void {
     this.userService.list().subscribe(
       result=>{
@@ -49,10 +40,10 @@ export class UsuarioListComponent implements OnInit {
       if (result.value) {
         this.userService.delete(usuario.idusuario).subscribe(
           result=>{
-            swal.fire(result)
+            swal.fire(result);
+            this.list();
           }
-        )
-        
+        );
       }
     })
   }

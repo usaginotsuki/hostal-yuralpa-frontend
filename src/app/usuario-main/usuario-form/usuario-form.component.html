@@ -1,1 +1,44 @@
-<p>usuario-form works!</p>
+
+<br>
+<form [formGroup]="formUsuario" class="user">
+    <div class="card-body">
+        <div class="input-group-md-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]="faUserCircle"></fa-icon></span>
+            
+                <input formControlName="nombre" type="text" class="form-control form-control-user" placeholder="Nombre">
+            </div>
+        </div>
+        <hr>
+        <div class="input-group-md-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]="faUserCircle"></fa-icon></span>
+            
+                <input formControlName="apellido" type="text" class="form-control form-control-user" placeholder="Apellido">
+                
+            </div>
+        </div>
+        <hr>
+        <div class="input-group-md-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]="faGlobe"></fa-icon></span>
+            
+                <input formControlName="nacionalidad" type="text" class="form-control form-control-user" placeholder="Nacionalidad">
+            </div>
+        </div>
+        <hr>
+        <div class="input-group-md-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]="faPhone"></fa-icon></span>
+            
+                <input formControlName="telefono" type="text" class="form-control form-control-user" placeholder="Telefono">
+            </div>
+        </div>
+        <div class="btn-group">
+            <button type="submit" (click)="save()" class="btn btn-success">
+                <fa-icon [icon]='faSave'></fa-icon>&nbsp;Guardar</button>
+            <button type="reset" class="btn btn-danger">
+                <fa-icon [icon]='faTimes'></fa-icon>&nbsp;Cancelar</button>
+        </div>
+    </div>
+</form>

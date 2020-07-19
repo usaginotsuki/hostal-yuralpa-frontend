@@ -17,6 +17,28 @@ export class UserService {
   };
   constructor(private http:HttpClient) { }
 
+  save(usuario:Usuario):Observable<any>{
+    let usuarioBody=JSON.stringify(usuario);
+    console.log(usuarioBody);
+
+    if(usuario.idusuario===undefined){
+      return this.http.post<Usuario>(
+        this.url,usuarioBody,this.httpOptions).
+        pipe(
+          retry(1),
+          tap(_=>this.log('Usuario añadido')),
+          catchError(this.handleError<Usuario>('createUsuario'))
+      )
+    }
+    else{
+      return this.http.put<Usuario>(this.url.concat('/').concat(usuario.idusuario),
+      usuarioBody,this.httpOptions)
+      .pipe(
+        retry(1),
+        catchError(this.handleError<Usuario>('retrieveUsuario'))      
+      )
+    }
+  }
 
   list():Observable<Usuario[]>{
     return this.http.get<Usuario[]>(this.url, this.httpOptions)
