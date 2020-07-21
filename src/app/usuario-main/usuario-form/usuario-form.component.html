@@ -1,12 +1,12 @@
-
+<h5>{{title}}</h5>
 <br>
-<form [formGroup]="formUsuario" class="user">
+<form [formGroup]="formUsuario" (ngSubmit)="onSubmit()" class="user">
     <div class="card-body">
-        <div class="input-group-md-3">
+        <div class="input-group-mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text"><fa-icon [icon]="faUserCircle"></fa-icon></span>
             
-                <input formControlName="nombre" type="text" class="form-control form-control-user" placeholder="Nombre">
+                <input formControlName="nombre" [(ngModel)]="usuario.nombre" [ngClass]="{'is-invalid': submitted && f.nombre.errors }" type="text" class="form-control form-control-user" placeholder="Nombre">
             </div>
         </div>
         <hr>
@@ -14,7 +14,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><fa-icon [icon]="faUserCircle"></fa-icon></span>
             
-                <input formControlName="apellido" type="text" class="form-control form-control-user" placeholder="Apellido">
+                <input formControlName="apellido" [(ngModel)]="usuario.apellido" [ngClass]="{'is-invalid': submitted && f.apellido.errors }" type="text" class="form-control form-control-user" placeholder="Apellido">
                 
             </div>
         </div>
@@ -23,7 +23,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><fa-icon [icon]="faGlobe"></fa-icon></span>
             
-                <input formControlName="nacionalidad" type="text" class="form-control form-control-user" placeholder="Nacionalidad">
+                <input formControlName="nacionalidad" [(ngModel)]="usuario.nacionalidad" [ngClass]="{'is-invalid': submitted && f.nacionalidad.errors }" type="text" class="form-control form-control-user" placeholder="Nacionalidad">
             </div>
         </div>
         <hr>
@@ -31,14 +31,14 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><fa-icon [icon]="faPhone"></fa-icon></span>
             
-                <input formControlName="telefono" type="text" class="form-control form-control-user" placeholder="Telefono">
+                <input formControlName="telefono" [(ngModel)]="usuario.telefono" [ngClass]="{'is-invalid': submitted && f.telefono.errors }" type="text" class="form-control form-control-user" placeholder="Telefono">
             </div>
         </div>
         <div class="btn-group">
-            <button type="submit" (click)="save()" class="btn btn-success">
+            <button type="submit"  class="btn btn-success">
                 <fa-icon [icon]='faSave'></fa-icon>&nbsp;Guardar</button>
             <button type="reset" class="btn btn-danger">
-                <fa-icon [icon]='faTimes'></fa-icon>&nbsp;Cancelar</button>
+                <fa-icon [icon]='faTimes' (click)="onReset()"></fa-icon>&nbsp;Cancelar</button>
         </div>
     </div>
 </form>

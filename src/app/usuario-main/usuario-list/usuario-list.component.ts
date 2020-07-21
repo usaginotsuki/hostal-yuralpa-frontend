@@ -29,7 +29,7 @@ export class UsuarioListComponent implements OnInit {
   delete(usuario:Usuario):void{
     swal.fire({
       title: 'Esta seguro??',
-      text: `Se va a eliminar del registro de ${usuario.nombre}`,
+      text: `Se va a eliminar del registro de ${usuario.nombre} ${usuario.apellido}`,
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
@@ -55,9 +55,9 @@ export class UsuarioListComponent implements OnInit {
       confirmButtonText: 'Aceptar',
       html: `<hr><fieldset>
         <label>Nombre:&nbsp;</label><span>${usuario.nombre}</span><br>
-        <label>NRC: &nbsp;</label><span>${usuario.apellido}</span><br>
-        <label>Horas: &nbsp;</label><span>${usuario.nacionalidad}</span><br>
-        <label>Área: &nbsp;</label><span>${usuario.telefono}</span><br>
+        <label>Apellido: &nbsp;</label><span>${usuario.apellido}</span><br>
+        <label>Nacionalidad: &nbsp;</label><span>${usuario.nacionalidad}</span><br>
+        <label>Teléfono: &nbsp;</label><span>${usuario.telefono}</span><br>
       </fieldset>`
     });
   }

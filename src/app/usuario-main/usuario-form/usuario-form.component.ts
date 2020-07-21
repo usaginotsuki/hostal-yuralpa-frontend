@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { faUserCircle,faGlobe, faPhone,faSave,faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../model/user.service';
@@ -19,9 +19,9 @@ export class UsuarioFormComponent implements OnInit {
   formUsuario:FormGroup;
 
   submitted = false;
-
-  title:String="Registro de nuevo usuario";
   @Input() usuario: Usuario;    
+  @Input() title:String;
+  @Output() flagToReload = new EventEmitter<Boolean>();
 
   constructor(private userService:UserService, private formBuilder:FormBuilder) { }
 
@@ -36,15 +36,52 @@ export class UsuarioFormComponent implements OnInit {
     );
   }
 
-  save():void{
+  get f(){
+    return this.formUsuario.controls;
+  }
+
+  onReset():void{
+    this.formUsuario.reset();
+    this.submitted=false;
+  }
+
+  onSubmit():void{
     this.submitted=true;
-    if (this.formUsuario.invalid){
+
+    if(this.formUsuario.invalid){
+      console.log('Formulario invalido');
       return;
     }
+
     this.userService.save(this.usuario).subscribe(
       result=>{
         this.submitted=false;
         if(result.icon==="success"){
+          console.log("asd")
+          swal.fire(result);
+          this.flagToReload.emit(true);
+          return;
+       
+        }
+
+        swal.fire(result);
+      }
+    )
+    
+  }
+/*
+  save():void{
+    this.submitted=true;
+    if (this.formUsuario.invalid){
+      console.log("inv");
+      return;
+    }
+    this.userService.save(this.usuario).subscribe(
+      result=>{
+        console.log("val1");
+        this.submitted=false;
+        if(result.icon==="success"){
+          console.log("val2");
           swal.fire(result);
           return;
         }
@@ -57,5 +94,5 @@ export class UsuarioFormComponent implements OnInit {
       }
     )
   }
-
+*/
 }

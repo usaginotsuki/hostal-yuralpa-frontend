@@ -17,7 +17,7 @@ export class UserService {
   };
   constructor(private http:HttpClient) { }
 
-  save(usuario:Usuario):Observable<any>{
+  save(usuario:Usuario):Observable<any>{//create /update
     let usuarioBody=JSON.stringify(usuario);
     console.log(usuarioBody);
 
