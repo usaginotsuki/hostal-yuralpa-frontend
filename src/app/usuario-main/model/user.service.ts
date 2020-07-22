@@ -56,11 +56,18 @@ export class UserService {
     catchError(this.handleError<Usuario>('Eliminar usuario'))
   )};
 
+  retrieve(id: string): Observable<Usuario>  {    
+    return this.http.get<Usuario>(this.url.concat('/').concat(id), this.httpOptions)
+    .pipe(
+      retry(1)     
+    );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
       this.log(`${operation} failed: ${error.message}`);
-
+      
       return of(result as T);
     };
   }
