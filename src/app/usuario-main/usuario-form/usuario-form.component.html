@@ -34,10 +34,12 @@
                 <input formControlName="telefono" [(ngModel)]="usuario.telefono" [ngClass]="{'is-invalid': submitted && f.telefono.errors }" type="text" class="form-control form-control-user" placeholder="Telefono">
             </div>
         </div>
+        <br>
         <div class="btn-group">
+            
             <button type="submit"  class="btn btn-success">
                 <fa-icon [icon]='faSave'></fa-icon>&nbsp;Guardar</button>
-            <button type="reset" class="btn btn-danger">
+            &nbsp;&nbsp;<button type="reset" class="btn btn-danger">
                 <fa-icon [icon]='faTimes' (click)="onReset()"></fa-icon>&nbsp;Cancelar</button>
         </div>
     </div>

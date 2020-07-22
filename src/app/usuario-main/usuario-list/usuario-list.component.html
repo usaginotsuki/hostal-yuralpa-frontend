@@ -4,6 +4,7 @@
 
     <thead>
         <tr>
+            <td>#</td>
             <td>Nombre</td>
             <td>Apellido</td>
             <td>Nacionalidad</td>
@@ -12,7 +13,8 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of usuarios">
+        <tr *ngFor="let item of usuarios | paginate: { itemsPerPage: 10, currentPage: p }; let i=index"> 
+            <th scope="row">{{i+1}}</th>
             <td>{{item.nombre}}</td>
             <td>{{item.apellido}}</td>
             <td>{{item.nacionalidad}}</td>
@@ -21,16 +23,9 @@
                 <button class="btn btn-sm btn-info" (click)="retrieve(item)" ><fa-icon [icon]='faEye'></fa-icon></button>
                 <button class="btn btn-sm btn-warning" (click)="update(item)" ><fa-icon [icon]='faPencilAlt'></fa-icon></button>
                 <button class="btn btn-sm btn-danger" (click)="delete(item)" ><fa-icon [icon]='faTrash'></fa-icon></button>
-                
-                <pagination 
-                ng-model="currentPage"
-                total-items="todos.length"
-                max-size="maxSize"  
-                boundary-links="true">
-                </pagination>
-
-
             </td>
         </tr>
     </tbody>
 </table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+

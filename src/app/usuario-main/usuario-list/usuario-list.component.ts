@@ -14,6 +14,7 @@ export class UsuarioListComponent implements OnInit {
   @Input() flagToReload : Boolean=false;
   @Output() reloadComplete=new EventEmitter<Boolean>(); 
   @Output() userToEdit= new EventEmitter<Usuario>();
+  p:Number=1;
 
   usuarios:Usuario[];
   faCamera=faCamera;
