@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges,Input,Output, EventEmitter} from '@angular/core';
 import { UserService } from '../model/user.service';
 import { Usuario } from '../model/usuario'; 
 import { faEye, faPencilAlt, faTrash, faCamera } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +11,10 @@ import swal from 'sweetalert2'
 })
 export class UsuarioListComponent implements OnInit {
 
+  @Input() flagToReload : Boolean=false;
+  @Output() reloadComplete=new EventEmitter<Boolean>(); 
+  @Output() userToEdit= new EventEmitter<Usuario>();
+
   usuarios:Usuario[];
   faCamera=faCamera;
   faEye=faEye;
@@ -22,8 +26,15 @@ export class UsuarioListComponent implements OnInit {
     this.userService.list().subscribe(
       result=>{
         this.usuarios=result;
+        this.reloadComplete.emit(false);
       }
     );
+  }
+
+  update (usuario:Usuario):void{
+    console.log("User to edit"+usuario);
+    this.userToEdit.emit(usuario);
+
   }
 
   delete(usuario:Usuario):void{
@@ -41,6 +52,8 @@ export class UsuarioListComponent implements OnInit {
         this.userService.delete(usuario.idusuario).subscribe(
           result=>{
             swal.fire(result);
+            this.flagToReload=false;
+            console.log(this.flagToReload);
             this.list();
           }
         );
@@ -63,5 +76,15 @@ export class UsuarioListComponent implements OnInit {
   }
   ngOnInit(): void {
     this.list();
+  }
+
+  ngOnChanges(changes:SimpleChanges){
+    if(changes.flagToReload.currentValue){ 
+      console.log("Flag to reload");
+      if(this.flagToReload){
+        this.list();
+      }
+    }
+
   }
 }

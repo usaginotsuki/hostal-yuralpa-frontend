@@ -57,7 +57,7 @@ export class UsuarioFormComponent implements OnInit {
       result=>{
         this.submitted=false;
         if(result.icon==="success"){
-          console.log("asd")
+          console.log("Flag form success");
           swal.fire(result);
           this.flagToReload.emit(true);
           return;
@@ -69,6 +69,7 @@ export class UsuarioFormComponent implements OnInit {
     )
     
   }
+  
 /*
   save():void{
     this.submitted=true;

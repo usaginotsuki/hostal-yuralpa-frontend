@@ -31,7 +31,7 @@ export class UserService {
       )
     }
     else{
-      return this.http.put<Usuario>(this.url.concat('/').concat(usuario.idusuario),
+      return this.http.patch<Usuario>(this.url.concat('/').concat(usuario.idusuario),
       usuarioBody,this.httpOptions)
       .pipe(
         retry(1),

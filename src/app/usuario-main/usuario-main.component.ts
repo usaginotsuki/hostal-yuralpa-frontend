@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output} from '@angular/core';
 import {Usuario } from './model/usuario';
 
 @Component({
@@ -10,11 +10,12 @@ export class UsuarioMainComponent implements OnInit {
 
   mainUsuario: Usuario;
   mainTitle: String;
-  mainReload:Boolean;
+  @Output() mainReload:Boolean;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.mainReload=false;
     this.onInit();
   }
 
@@ -22,11 +23,19 @@ export class UsuarioMainComponent implements OnInit {
     this.mainUsuario=new Usuario();
     this.mainTitle="Registro de un nuevo huesped";
   }
-  reload($event){
+  reloadToDo($event){
     this.mainReload=$event;
     if(this.mainReload){
-      console.log("Reload list");
+      console.log("Main call to Reload list");
     }
+  }
+  reloadDone($event){
+    this.mainReload=$event;
+  }
+
+  mainUpdate($event){
+    this.mainUsuario=$event;
+    this.mainTitle="Actualizar el registro de "+this.mainUsuario.nombre;
   }
 
 }
