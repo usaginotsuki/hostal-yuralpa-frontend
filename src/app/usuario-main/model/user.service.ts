@@ -40,8 +40,10 @@ export class UserService {
     }
   }
 
-  list():Observable<Usuario[]>{
-    return this.http.get<Usuario[]>(this.url, this.httpOptions)
+  list(page:string):Observable<Usuario[]>{
+    let paging="/page/";
+    let list = this.url.concat(paging, page);
+    return this.http.get<Usuario[]>(list, this.httpOptions)
     .pipe(
     retry(1),
     tap(_ => this.log('User download')),

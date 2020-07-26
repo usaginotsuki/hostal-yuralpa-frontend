@@ -14,7 +14,10 @@ export class UsuarioListComponent implements OnInit {
   @Input() flagToReload : Boolean=false;
   @Output() reloadComplete=new EventEmitter<Boolean>(); 
   @Output() userToEdit= new EventEmitter<Usuario>();
+  @Input() flagToNext = new EventEmitter<Boolean>();
+
   p:Number=1;
+  l:Number=1;
 
   usuarios:Usuario[];
   faCamera=faCamera;
@@ -24,7 +27,7 @@ export class UsuarioListComponent implements OnInit {
 
   constructor(private userService:UserService) { }
   list():void {
-    this.userService.list().subscribe(
+    this.userService.list(this.p.toString()).subscribe(
       result=>{
         this.usuarios=result;
         this.reloadComplete.emit(false);
