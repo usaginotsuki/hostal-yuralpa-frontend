@@ -13,7 +13,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of usuarios | paginate: { itemsPerPage: 5, currentPage: p }; let i=index"> 
+        <tr *ngFor="let item of usuarios ; let i=index"> 
             <th scope="row">{{i+1}}</th>
             <td>{{item.nombre}}</td>
             <td>{{item.apellido}}</td>
@@ -27,5 +27,7 @@
         </tr>
     </tbody>
 </table>
-<pagination-controls (pageChange)="p = $event" ></pagination-controls>
+<button type="button" class="btn btn-primary" (click)="listAnterior()" >Anterior</button>
+&nbsp;&nbsp;
+<button type="button" class="btn btn-primary" (click)="list()" >Siguiente</button>
 

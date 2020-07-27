@@ -16,7 +16,7 @@ export class UsuarioListComponent implements OnInit {
   @Output() userToEdit= new EventEmitter<Usuario>();
   @Input() flagToNext = new EventEmitter<Boolean>();
 
-  p:Number=1;
+  p:number=0;
   l:Number=1;
 
   usuarios:Usuario[];
@@ -27,6 +27,20 @@ export class UsuarioListComponent implements OnInit {
 
   constructor(private userService:UserService) { }
   list():void {
+    this.p=this.p+1;
+    console.log(this.p);
+    this.userService.list(this.p.toString()).subscribe(
+      result=>{
+        this.usuarios=result;
+        this.reloadComplete.emit(false);
+      }
+    );
+  }
+  listAnterior():void {
+    if(this.p>0){
+      this.p=this.p-1;
+      console.log(this.p);
+    }
     this.userService.list(this.p.toString()).subscribe(
       result=>{
         this.usuarios=result;
@@ -83,6 +97,10 @@ export class UsuarioListComponent implements OnInit {
   }
 
   ngOnChanges(changes:SimpleChanges){
+    if(changes.p.currentValue){
+      console.log(this.p);
+      this.list();
+    }
     if(changes.flagToReload.currentValue){ 
       console.log("Flag to reload");
       if(this.flagToReload){
