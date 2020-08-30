@@ -29,32 +29,31 @@ export class CuartoListComponent implements OnInit {
 
  
   constructor(private cuartoService:CuartoService) { }
-  list():void {
-    this.p=this.p+1;
-    console.log(this.p);
-    this.cuartoService.list(this.p.toString()).subscribe(
-      result=>{
-        this.cuartos=result;
-        this.reloadComplete.emit(false);
-      }
-    );
+ 
+  ngOnInit(): void {
+    this.list();    
   }
-
-  listAnterior():void {
-    if(this.p>0){
-      this.p=this.p-1;
-      console.log(this.p);
+  
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes.flagToReload.currentValue){
+      console.log("Flag changed to: " + this.flagToReload );
+      if(this.flagToReload){
+        this.list();
+      }
     }
-    this.cuartoService.list(this.p.toString()).subscribe(
-      result=>{
-        this.cuartos=result;
-        this.reloadComplete.emit(false);
+  }
+
+  list() : void {
+    this.cuartoService.list(1,100).subscribe(
+      result => {        
+        this.cuartos = result;                
+        this.reloadComplete.emit(true);
       }
     );
   }
-
+ 
   update (cuarto:Cuarto):void{
-    console.log("User to edit "+cuarto);
+    console.log("User to edit"+cuarto);
     this.userToEdit.emit(cuarto);
 
   }
@@ -85,28 +84,14 @@ export class CuartoListComponent implements OnInit {
 
   retrieve(cuarto: Cuarto) : void {
     swal.fire({
-      title: `<h4>${cuarto.num_habitacion}</h4>`,
+      title: `<h4>${cuarto.idcuarto}</h4>`,
       icon: 'info',
       confirmButtonText: 'Aceptar',
       html: `<hr><fieldset>
-        <label>Camas:&nbsp;</label><span>${cuarto.camas}</span><br>
-        <label>Costo: &nbsp;</label><span>${cuarto.costo}</span><br>
-        <label>Compartido: &nbsp;</label><span>${cuarto.internet}</span><br>
-        <label>Teléfono: &nbsp;</label><span>${cuarto.disponibilidad}</span><br>
-      </fieldset>`
+        <label># de habitacion:&nbsp;</label><span>${cuarto.num_habitacion}</span><br>
+        <label>Camas: &nbsp;</label><span>${cuarto.camas}</span><br>
+        </fieldset>`
     });
-  }
-  ngOnInit(): void {
-    this.list();
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-    if(changes.flagToReload.currentValue){
-      console.log("Flag changed to: " + this.flagToReload );
-      if(this.flagToReload){
-        this.list();
-      }
-    }
   }
 
 }

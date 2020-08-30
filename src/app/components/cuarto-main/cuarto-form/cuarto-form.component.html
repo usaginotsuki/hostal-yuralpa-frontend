@@ -1,1 +1,74 @@
-<p>cuarto-form works!</p>
+<h5>{{title}}</h5>
+<br>
+<form [formGroup]="formCuarto" (ngSubmit)="onSubmit()" class="Cuarto">
+    <div class="card-body">
+        <div class="input-group-mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]="faUserCircle"></fa-icon></span>
+            <div class="dropdown">
+                <input formControlName="aire" [(ngModel)]="cuarto.aire" [ngClass]="{'is-invalid': submitted && f.aire.errors }" type="text" class="form-control form-control-user" placeholder="Aire">
+
+            </div>
+            </div>
+        </div>
+        <hr>
+        <div class="input-group-md-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]="faUserCircle"></fa-icon></span>
+            
+                <input formControlName="camas" [(ngModel)]="cuarto.camas" [ngClass]="{'is-invalid': submitted && f.v.errors }" type="text" class="form-control form-control-user" placeholder="Camas">
+                
+            </div>
+        </div>
+        <hr>
+        <div class="input-group-md-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]="faGlobe"></fa-icon></span>
+            
+                <input formControlName="compartido" [(ngModel)]="cuarto.compartido" [ngClass]="{'is-invalid': submitted && f.compartido.errors }" type="text" class="form-control form-control-user" placeholder="Compartido">
+            </div>
+        </div>
+        <hr>
+        <div class="input-group-md-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]="faGlobe"></fa-icon></span>
+            
+                <input formControlName="costo" [(ngModel)]="cuarto.costo" [ngClass]="{'is-invalid': submitted && f.costo.errors }" type="text" class="form-control form-control-user" placeholder="Costo">
+            </div>
+        </div>
+        <hr>
+        <div class="input-group-md-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]="faGlobe"></fa-icon></span>
+            
+                <input formControlName="disponibilidad" [(ngModel)]="cuarto.disponibilidad" [ngClass]="{'is-invalid': submitted && f.disponibilidad.errors }" type="text" class="form-control form-control-user" placeholder="Disponibilidad">
+            </div>
+        </div>
+        <hr>
+        <div class="input-group-md-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]="faGlobe"></fa-icon></span>
+            
+                <input formControlName="internet" [(ngModel)]="cuarto.internet" [ngClass]="{'is-invalid': submitted && f.internet.errors }" type="text" class="form-control form-control-user" placeholder="Internet">
+            </div>
+        </div>
+        <hr>
+        <div class="input-group-md-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]="faGlobe"></fa-icon></span>
+            
+                <input formControlName="num_habitacion" [(ngModel)]="cuarto.num_habitacion" [ngClass]="{'is-invalid': submitted && f.num_habitacion.errors }" type="text" class="form-control form-control-user" placeholder="Num_habitacion">
+            </div>
+        </div>
+        <hr>
+        
+        <br>
+        <div class="btn-group">
+            
+            <button type="submit"  class="btn btn-success">
+                <fa-icon [icon]='faSave'></fa-icon>&nbsp;Guardar</button>
+            &nbsp;&nbsp;<button type="reset" class="btn btn-danger">
+                <fa-icon [icon]='faTimes' (click)="onReset()"></fa-icon>&nbsp;Cancelar</button>
+        </div>
+    </div>
+</form>

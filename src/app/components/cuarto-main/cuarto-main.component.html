@@ -7,10 +7,17 @@
       </div>
     <hr/>
     <div class="row">
-        <hr>
-        <app-cuarto-list></app-cuarto-list>
-   
- 
+      <app-cuarto-list [flagToReload]="mainReload"
+      (reloadComplete)="reloadDone($event)"
+      (userToEdit)="mainUpdate($event)"
+      ></app-cuarto-list>
+     <hr>
+    <app-cuarto-form [cuarto]="mainCuarto" 
+     [title]="mainTitle" 
+     (flagToReload)="reloadToDo($event)"
+     >
+    </app-cuarto-form>
+
     <hr>
 
     </div>

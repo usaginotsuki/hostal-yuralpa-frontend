@@ -11,8 +11,8 @@ export class BooleanPipe implements PipeTransform {
   faPencilAlt=faPencilAlt;
   faTrash=faTrash;
   
-  transform(value:boolean) {
-    return value === true ? `<p>Si<\p>` : 'No';
+  transform(value:string) {
+    return value === 'true' ? 'Si' : 'No';
   }
 
 }

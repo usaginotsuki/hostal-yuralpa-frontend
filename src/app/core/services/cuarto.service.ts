@@ -51,14 +51,14 @@ export class CuartoService {
   }
 
   count(): Observable<any>  {    
-    return this.http.get<any>( this.root.concat('count/cuarto'), this.httpOptions)
+    return this.http.get<any>( this.root.concat('count/room'), this.httpOptions)
     .pipe(
       retry(1)     
     );
   }
 
   list(page: number, limit : number): Observable<Cuarto[]> {
-    return this.http.get<Cuarto[]>(this.root.concat("page/cuarto/") + page + "/" + limit, this.httpOptions)
+    return this.http.get<Cuarto[]>(this.root.concat("page/room/") + page + "/" + limit, this.httpOptions)
       .pipe(
         retry(1)
       );
