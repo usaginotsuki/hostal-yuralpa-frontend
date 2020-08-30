@@ -1,0 +1,40 @@
+<h5>Listado de Usuarios</h5>
+<br>
+<table class="table">
+
+    <thead>
+        <tr>
+            <td>#</td>
+            <td># de habitacion</td>
+            <td># de Camas</td>
+            <td>Costo</td>
+            <td>Disponibilidad</td>
+            <td>Aire</td>
+            <td>Internet</td>
+            <td>Compartido</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of cuartos ; let i=index"> 
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.num_habitacion}}</td>
+            <td>{{item.camas}}</td>
+            <td>{{item.costo}}</td>
+            <td>{{item.disponibilidad | boolean}}</td>
+            <td>{{item.aire | boolean}}</td>
+            <td>{{item.internet | boolean}}</td>
+            <td>{{item.compartido | boolean}}</td>
+            <td class="btn-group">
+                <button class="btn btn-sm btn-info" (click)="retrieve(item)" ><fa-icon [icon]='faEye'></fa-icon></button>
+                <button class="btn btn-sm btn-warning" (click)="update(item)" ><fa-icon [icon]='faPencilAlt'></fa-icon></button>
+                <button class="btn btn-sm btn-danger" (click)="delete(item)" ><fa-icon [icon]='faTrash'></fa-icon></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<button type="button" class="btn btn-primary" (click)="listAnterior()" >Anterior</button>
+&nbsp;&nbsp;
+<button type="button" class="btn btn-primary" (click)="list()" >Siguiente</button>
+
