@@ -2,22 +2,22 @@
     <div class="media">    
         <div class="media-body">
           <h4 class="media-heading">Gestión del hotel</h4>
-          <p>Listado de usuarios</p>      
+          <p>Listado de comida</p>      
         </div>   
       </div>
     <hr/>
     <div class="row">
-        <app-usuario-list [flagToReload]="mainReload"
+        <app-comida-list [flagToReload]="mainReload"
          (reloadComplete)="reloadDone($event)"
          (userToEdit)="mainUpdate($event)"
-         ></app-usuario-list>
+         ></app-comida-list>
         <hr>
-       <app-usuario-form [usuario]="mainUsuario" 
+        <!--<app-usuario-form [comida]="mainComida" 
         [title]="mainTitle" 
         (flagToReload)="reloadToDo($event)"
         >
       </app-usuario-form>
- 
+    -->
     <hr>
 
     </div>

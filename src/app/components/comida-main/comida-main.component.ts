@@ -1,20 +1,18 @@
 import { Component, OnInit, Output } from '@angular/core';
-import {Habitacion } from '../../shared/models/habitacion';
-
+import { Comida } from '../../shared/models/comida';
 
 @Component({
-  selector: 'app-habitacion-main',
-  templateUrl: './habitacion-main.component.html',
-  styleUrls: ['./habitacion-main.component.css']
+  selector: 'app-comida-main',
+  templateUrl: './comida-main.component.html',
+  styleUrls: ['./comida-main.component.css']
 })
-export class HabitacionMainComponent implements OnInit {
+export class ComidaMainComponent implements OnInit {
 
-  mainHabitacion:Habitacion;
-  mainTitle:string;
+  mainMeal:Comida;
+  mainTitle:String;
   @Output() mainReload:Boolean;
 
   constructor() { }
-
 
   ngOnInit(): void {
     this.mainReload=false;
@@ -22,7 +20,7 @@ export class HabitacionMainComponent implements OnInit {
   }
 
   onInit(){
-    this.mainHabitacion=new Habitacion();
+    this.mainMeal=new Comida();
     this.mainTitle="Registro de un nuevo huesped";
   }
   reloadToDo($event){
@@ -36,8 +34,8 @@ export class HabitacionMainComponent implements OnInit {
   }
 
   mainUpdate($event){
-    this.mainHabitacion=$event;
-    this.mainTitle="Actualizar el registro de "+this.mainHabitacion.num_cuarto;
+    this.mainMeal=$event;
+    this.mainTitle="Actualizar el registro de "+this.mainMeal.idcomida;
   }
 
 }

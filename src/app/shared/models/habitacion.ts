@@ -2,12 +2,14 @@ import {Cuarto} from './cuarto';
 import {Usuario} from './usuario'
 export class Habitacion {
     idhabitacion:string;
-    nombre: string;
-    num_cuarto:number;
-    fecha_reservacion:Date;
-    num_dias:number;
-    cuarto:Cuarto;
-    usuario:Usuario;
+    fecha_entrada:string;
+    fecha_salida:string;
+    num_cuarto:string;
+    observaciones:string;
+    idusuario:string;
+    idcuarto:string; 
+    cuarto?:Cuarto;
+    usuario?:Usuario;
     
 
 }

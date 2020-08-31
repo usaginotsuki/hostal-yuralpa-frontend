@@ -1,7 +1,7 @@
 <div class="col-12">
     <div class="breadcumb-area bg-img">		
         <div class="bradcumbContent">
-            <h2>Cuarto</h2>
+            <h2>Alojamiento</h2>
         </div>
     </div>
 
@@ -23,27 +23,24 @@
             <div class="media-left">
             </div>
             <div class="media-body">
-                <small class="media-heading">Num Habitacion</small>
-                <p class="h6"><strong>{{cuarto.num_habitacion}}</strong></p>
+                <small class="media-heading"># de cuarto</small>
+                <p class="h6"><strong>{{habitacion.num_cuarto}}</strong></p>
             </div>
         </div>  
         <div class="media">
             <div class="media-left">
             </div>
             <div class="media-body">
-                <small class="media-heading">Internet</small>
-                <p class="h6"><strong>{{cuarto.internet | boolean}}</strong></p>
+                <small class="media-heading">Fecha de entrada</small>
+                <p class="h6"><strong>{{habitacion.fecha_entrada}}</strong></p>
             </div>
         </div>        
         <div class="media">
             <div class="media-left">
             </div>
             <div class="media-body">
-                <small class="media-heading">Aire</small>
-                <br>
-                <span><fa-icon class="mr-3 fa-2x" [icon]="faWind"></fa-icon></span>
-
-                <p class="h6"><strong>{{cuarto.aire | boolean}}</strong></p>
+                <small class="media-heading">Fecha de salida</small>
+                <p class="h6"><strong>{{habitacion.fecha_salida}}</strong></p>
             </div>
         </div>
         
