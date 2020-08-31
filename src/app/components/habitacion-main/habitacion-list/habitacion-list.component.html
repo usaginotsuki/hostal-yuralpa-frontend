@@ -1,1 +1,29 @@
-<p>habitacion-list works!</p>
+<h5>Listado de Alojamientos</h5>
+<br>
+<table class="table">
+
+    <thead>
+        <tr>
+            <td>#</td>
+            <td># de Cuarto</td>
+            <td>Fecha de entrada</td>
+            <td>Fecha de salida</td>
+            <td>Observaciones</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of habitacion ; let i=index"> 
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.num_cuarto}}</td>
+            <td>{{item.fecha_entrada}}</td>
+            <td>{{item.fecha_salida}}</td>
+            <td>{{item.observaciones}}</td>
+            <td class="btn-group">
+                <button class="btn btn-sm btn-info" [routerLink]="['/acomm', item.idhabitacion]"><fa-icon [icon]='faEye'></fa-icon></button>
+                <button class="btn btn-sm btn-warning" (click)="update(item)"><fa-icon [icon]='faPencilAlt'></fa-icon></button>                
+                <button class="btn btn-sm btn-danger" (click)="delete(item)"><fa-icon [icon]='faTrash'></fa-icon></button>     
+            </td>
+        </tr>
+    </tbody>
+</table>

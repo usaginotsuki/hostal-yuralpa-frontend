@@ -1,26 +1,26 @@
-<h5 style="text-align: center">Listado de Clientes</h5>
+<h5>Listado de Comidas</h5>
 <br>
 <table class="table">
 
     <thead>
         <tr>
             <td>#</td>
-            <td>Nombre</td>
-            <td>Apellido</td>
-            <td>Nacionalidad</td>
-            <td>Telefono</td>
+            <td>Fecha</td>
+            <td>Comida</td>
+            <td>Costo</td>
+            <td>Observaciones</td>
             <td></td>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of usuarios ; let i=index"> 
+        <tr *ngFor="let item of comida ; let i=index"> 
             <th scope="row">{{i+1}}</th>
-            <td>{{item.nombre}}</td>
-            <td>{{item.apellido}}</td>
-            <td>{{item.nacionalidad}}</td>
-            <td>{{item.telefono}}</td>
+            <td>{{item.fecha}}</td>
+            <td>{{item.comida}}</td>
+            <td>{{item.costo}}</td>
+            <td>{{item.observaciones}}</td>
             <td class="btn-group">
-                <button class="btn btn-sm btn-info" [routerLink]="['/user', item.idusuario]"><fa-icon [icon]='faEye'></fa-icon></button>
+                <button class="btn btn-sm btn-info" [routerLink]="['/meal', item.idcomida]"><fa-icon [icon]='faEye'></fa-icon></button>
                 <button class="btn btn-sm btn-warning" (click)="update(item)"><fa-icon [icon]='faPencilAlt'></fa-icon></button>                
                 <button class="btn btn-sm btn-danger" (click)="delete(item)"><fa-icon [icon]='faTrash'></fa-icon></button>     
             </td>

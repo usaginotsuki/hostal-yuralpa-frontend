@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faUser, faIdCard, faCalendar, faMapMarkedAlt, faPhone, faAt, faRoad  } from '@fortawesome/free-solid-svg-icons';
+import { faWind, faUser, faIdCard, faCalendar, faMapMarkedAlt, faPhone, faAt, faRoad  } from '@fortawesome/free-solid-svg-icons';
 import { Cuarto } from 'src/app/shared/models/cuarto';
 import { CuartoService } from 'src/app/core/services/cuarto.service';
 import { ActivatedRoute } from '@angular/router';
@@ -19,6 +19,8 @@ export class CuartoCardComponent implements OnInit {
   faPhone = faPhone;
   faAt = faAt;
   faRoad = faRoad;
+  faWind=faWind;
+
 
   cuarto:Cuarto=new Cuarto();
 
