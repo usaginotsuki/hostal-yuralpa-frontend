@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule, Routes } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +27,7 @@ import { ComidaCardComponent } from './components/comida-main/comida-card/comida
 import { ComidaFormComponent } from './components/comida-main/comida-form/comida-form.component';
 import { HabitacionSearchComponent } from './components/habitacion-main/habitacion-search/habitacion-search.component';
 import { HabitacionCardComponent } from './components/habitacion-main/habitacion-card/habitacion-card.component';
+import { CuartoSearchComponent } from './components/cuarto-main/cuarto-search/cuarto-search.component';
 
 
 const routes:Routes=[
@@ -55,6 +57,7 @@ const routes:Routes=[
     ComidaFormComponent,
     HabitacionSearchComponent,
     HabitacionCardComponent,
+    CuartoSearchComponent,
   
   ],
   imports: [
@@ -64,7 +67,8 @@ const routes:Routes=[
     FontAwesomeModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatSelectCountryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

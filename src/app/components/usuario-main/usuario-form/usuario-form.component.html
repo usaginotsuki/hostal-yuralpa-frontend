@@ -22,8 +22,8 @@
         <div class="input-group-md-3">
             <div class="input-group-prepend">
                 <span class="input-group-text"><fa-icon [icon]="faGlobe"></fa-icon></span>
-            
-                <input formControlName="nacionalidad" [(ngModel)]="usuario.nacionalidad" [ngClass]="{'is-invalid': submitted && f.nacionalidad.errors }" type="text" class="form-control form-control-user" placeholder="Nacionalidad">
+                <select formControlName="nacionalidad" class="selectpicker countrypicker" [(ngModel)]="usuario.nacionalidad" [ngClass]="{'is-invalid': submitted && f.nacionalidad.errors }"></select>
+
             </div>
         </div>
         <hr>
