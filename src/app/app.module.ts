@@ -21,6 +21,15 @@ import { CuartoListComponent } from './components/cuarto-main/cuarto-list/cuarto
 import { CuartoFormComponent } from './components/cuarto-main/cuarto-form/cuarto-form.component';
 import { BooleanPipe } from './shared/pipes/boolean.pipe';
 import { CuartoCardComponent } from './components/cuarto-main/cuarto-card/cuarto-card.component';
+<<<<<<< HEAD
+=======
+import { ComidaMainComponent } from './components/comida-main/comida-main.component';
+import { ComidaListComponent } from './components/comida-main/comida-list/comida-list.component';
+import { ComidaCardComponent } from './components/comida-main/comida-card/comida-card.component';
+import { ComidaFormComponent } from './components/comida-main/comida-form/comida-form.component';
+import { HabitacionSearchComponent } from './components/habitacion-main/habitacion-search/habitacion-search.component';
+import { HabitacionCardComponent } from './components/habitacion-main/habitacion-card/habitacion-card.component';
+>>>>>>> parent of b37bef3... Before country select
 
 
 const routes:Routes=[
@@ -45,6 +54,15 @@ const routes:Routes=[
     CuartoFormComponent,
     BooleanPipe,
     CuartoCardComponent,
+<<<<<<< HEAD
+=======
+    ComidaMainComponent,
+    ComidaListComponent,
+    ComidaCardComponent,
+    ComidaFormComponent,
+    HabitacionSearchComponent,
+    HabitacionCardComponent,
+>>>>>>> parent of b37bef3... Before country select
   
   ],
   imports: [
