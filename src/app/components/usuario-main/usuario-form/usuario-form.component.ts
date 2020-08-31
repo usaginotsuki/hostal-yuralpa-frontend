@@ -4,6 +4,16 @@ import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../../core/services/user.service';
 import { Usuario } from '../../../shared/models/usuario';
 import swal from 'sweetalert2';
+import { mobiscroll, MbscSelectOptions } from '@mobiscroll/angular';
+mobiscroll.settings = {
+  theme: 'ios',
+  themeVariant: 'light'
+};
+
+const remoteData = {
+  url: 'https://trial.mobiscroll.com/content/countries.json',
+  type: 'json'
+};
 
 @Component({
   selector: 'app-usuario-form',
@@ -11,7 +21,45 @@ import swal from 'sweetalert2';
   styleUrls: ['./usuario-form.component.css']
 })
 export class UsuarioFormComponent implements OnInit {
-  
+  filter: string;
+    group: string;
+    desktopFilter: string;
+    desktopGroup: string;
+
+    filterSettings: MbscSelectOptions = {
+        display: 'bubble',
+        data: remoteData,
+        filter: true,
+        group: {
+            groupWheel: false,
+            header: false
+        },
+        width: 400
+    };
+    groupSettings: MbscSelectOptions = {
+        display: 'bubble',
+        data: remoteData,
+        group: true,
+        width: [40, 240]
+    };
+    desktopFilterSettings: MbscSelectOptions = {
+        display: 'bubble',
+        touchUi: false,
+        data: remoteData,
+        filter: true,
+        group: {
+            groupWheel: false,
+            header: false
+        },
+        width: 400
+    };
+
+    desktopGroupSettings: MbscSelectOptions = {
+        display: 'bubble',
+        touchUi: false,
+        data: remoteData,
+        group: true
+    };
   faUserCircle=faUserCircle;
   faGlobe=faGlobe;
   faPhone=faPhone;
