@@ -12,20 +12,15 @@ import { AppComponent } from './app.component';
 import { UsuarioFormComponent } from './components/usuario-main/usuario-form/usuario-form.component';
 import { UsuarioMainComponent } from './components/usuario-main/usuario-main.component';
 import { UsuarioListComponent } from './components/usuario-main/usuario-list/usuario-list.component';
+/*import { UserCardComponent } from './components/user-card/user-card.component';
 import {HabitacionMainComponent} from './components/habitacion-main/habitacion-main.component';
 import {HabitacionFormComponent} from './components/habitacion-main/habitacion-form/habitacion-form.component';
-import {HabitacionListComponent} from './components/habitacion-main/habitacion-list/habitacion-list.component';
+import {HabitacionListComponent} from './components/habitacion-main/habitacion-list/habitacion-list.component';*/
 import { CuartoMainComponent } from './components/cuarto-main/cuarto-main.component';
 import { CuartoListComponent } from './components/cuarto-main/cuarto-list/cuarto-list.component';
 import { CuartoFormComponent } from './components/cuarto-main/cuarto-form/cuarto-form.component';
 import { BooleanPipe } from './shared/pipes/boolean.pipe';
 import { CuartoCardComponent } from './components/cuarto-main/cuarto-card/cuarto-card.component';
-import { ComidaMainComponent } from './components/comida-main/comida-main.component';
-import { ComidaListComponent } from './components/comida-main/comida-list/comida-list.component';
-import { ComidaCardComponent } from './components/comida-main/comida-card/comida-card.component';
-import { ComidaFormComponent } from './components/comida-main/comida-form/comida-form.component';
-import { HabitacionSearchComponent } from './components/habitacion-main/habitacion-search/habitacion-search.component';
-import { HabitacionCardComponent } from './components/habitacion-main/habitacion-card/habitacion-card.component';
 
 
 const routes:Routes=[
@@ -41,20 +36,15 @@ const routes:Routes=[
     UsuarioMainComponent,
     UsuarioFormComponent,
     UsuarioListComponent,
+    /*UserCardComponent,
     HabitacionFormComponent,
     HabitacionListComponent,
-    HabitacionMainComponent,
+    HabitacionMainComponent,*/
     CuartoMainComponent,
     CuartoListComponent,
     CuartoFormComponent,
     BooleanPipe,
     CuartoCardComponent,
-    ComidaMainComponent,
-    ComidaListComponent,
-    ComidaCardComponent,
-    ComidaFormComponent,
-    HabitacionSearchComponent,
-    HabitacionCardComponent,
   
   ],
   imports: [

@@ -9,28 +9,14 @@ import { CuartoMainComponent } from './components/cuarto-main/cuarto-main.compon
 import { CuartoListComponent } from './components/cuarto-main/cuarto-list/cuarto-list.component';
 import { CuartoFormComponent } from './components/cuarto-main/cuarto-form/cuarto-form.component';
 import { CuartoCardComponent } from './components/cuarto-main/cuarto-card/cuarto-card.component';
-import { ComidaMainComponent } from './components/comida-main/comida-main.component';
-import { ComidaCardComponent } from './components/comida-main/comida-card/comida-card.component';
-import { ComidaFormComponent } from './components/comida-main/comida-form/comida-form.component';
-import { ComidaListComponent } from './components/comida-main/comida-list/comida-list.component';
-import { HabitacionMainComponent } from './components/habitacion-main/habitacion-main.component';
-import { HabitacionListComponent } from './components/habitacion-main/habitacion-list/habitacion-list.component';
-import { HabitacionCardComponent } from './components/habitacion-main/habitacion-card/habitacion-card.component';
 
 
 const routes: Routes = [
   {path:'',redirectTo:'/',pathMatch:'full'},
   {path: 'user', component: UsuarioMainComponent},
-  {path: 'user/:id', component: UsuarioCardComponent},
   {path: 'room', component: CuartoMainComponent},
+  {path: 'user/:id', component: UsuarioCardComponent},
   {path: 'room/:id', component: CuartoCardComponent},
-  {path: 'meal', component: ComidaFormComponent},
-  {path: 'meal/list', component: ComidaListComponent},
-  {path: 'meal/:id', component: ComidaCardComponent},
-  {path: 'acomm', component: HabitacionMainComponent},
-  {path: 'acomm/list', component: HabitacionListComponent},
-  {path: 'acomm/:id', component: HabitacionCardComponent},
-
 ];
 
 @NgModule({

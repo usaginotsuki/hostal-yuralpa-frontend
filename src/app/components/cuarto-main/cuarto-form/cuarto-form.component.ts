@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { faUserCircle,faGlobe, faPhone,faSave,faTimes,faWind } from '@fortawesome/free-solid-svg-icons';
+import { faUserCircle,faGlobe, faPhone,faSave,faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { CuartoService } from '../../../core/services/cuarto.service';
 import { Cuarto } from '../../../shared/models/cuarto';
@@ -17,7 +17,6 @@ export class CuartoFormComponent implements OnInit {
   faPhone=faPhone;
   faSave=faSave;
   faTimes=faTimes;
-  faWind=faWind;
   formCuarto:FormGroup;
   
   submitted = false;
@@ -64,7 +63,6 @@ export class CuartoFormComponent implements OnInit {
           swal.fire(result);
           this.flagToReload.emit(true);
           return;
-
        
         }
 
