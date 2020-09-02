@@ -1,0 +1,25 @@
+<div>
+    <div class="media">    
+        <div class="media-body">
+          <h4 style="text-align: center" class="media-heading">Gestión de servicios </h4>
+             
+        </div>   
+      </div>
+    <hr/>
+    <div class="row">
+        <app-service-list [flagToReload]="mainReload"
+         (reloadComplete)="reloadDone($event)"
+         (userToEdit)="mainUpdate($event)"
+         ></app-service-list>
+        <hr>
+       <app-service-form [servicio]="mainServicio" 
+        [title]="mainTitle" 
+        (flagToReload)="reloadToDo($event)"
+        >
+      </app-service-form>
+
+    <hr>
+
+    </div>
+    
+    </div>

@@ -2,24 +2,36 @@
     <div class="media">    
         <div class="media-body">
           <h4 style="text-align: center" class="media-heading">Gestión de clientes </h4>
-             
+            
         </div>   
       </div>
     <hr/>
-    <div class="row">
-        <app-usuario-list [flagToReload]="mainReload"
-         (reloadComplete)="reloadDone($event)"
-         (userToEdit)="mainUpdate($event)"
-         ></app-usuario-list>
-        <hr>
-       <app-usuario-form [usuario]="mainUsuario" 
-        [title]="mainTitle" 
-        (flagToReload)="reloadToDo($event)"
-        >
-      </app-usuario-form>
+</div>
+      <div class="container fluid">
+        <div class=row style="text-align: center;">
+          <div class="col-12" style="text-align: center;">
+            <app-usuario-list [flagToReload]="mainReload"
+            (reloadComplete)="reloadDone($event)"
+            (userToEdit)="mainUpdate($event)"
+            ></app-usuario-list>
+          </div>
+          
+        
+        </div>
+        <div class="row"> 
+          <div class="col-4">
+            <app-usuario-form [usuario]="mainUsuario" 
+            [title]="mainTitle" 
+            (flagToReload)="reloadToDo($event)"
+            ></app-usuario-form>
+          </div>
+          <div class="col-8">
+            <app-usuario-statistics></app-usuario-statistics>
+          </div>
+          
+        </div>
+          
  
-    <hr>
+      </div>
 
-    </div>
-    
-    </div>
+   

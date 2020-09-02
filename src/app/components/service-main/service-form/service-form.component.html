@@ -1,0 +1,53 @@
+<h5>{{title}}</h5>
+<br>
+<form [formGroup]="formServicio" (ngSubmit)="onSubmit()" class="user">
+    <div class="card-body">
+        <div class="input-group-mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]="faUserCircle"></fa-icon></span>
+            
+                <input formControlName="servicio" [(ngModel)]="servicio.servicio" [ngClass]="{'is-invalid': submitted && f.servicio.errors }" type="text" class="form-control form-control-user" placeholder="Servicio">
+            </div>
+        </div>
+        <hr>
+        <div class="input-group-md-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]="faUserCircle"></fa-icon></span>
+            
+                <input formControlName="costo" [(ngModel)]="servicio.costo" [ngClass]="{'is-invalid': submitted && f.costo.errors }" type="text" class="form-control form-control-user" placeholder="Costo">
+                
+            </div>
+        </div>
+        <hr>
+        <div class="input-group-md-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]="faGlobe"></fa-icon></span>
+                <input formControlName="fecha" [(ngModel)]="servicio.fecha" [ngClass]="{'is-invalid': submitted && f.fecha.errors }" type="text" class="form-control form-control-user" placeholder="Fecha">
+            </div>
+        </div>
+      
+        <hr>
+        <div class="input-group-md-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]="faPhone"></fa-icon></span>
+            
+                <input formControlName="detalle" [(ngModel)]="servicio.detalle" [ngClass]="{'is-invalid': submitted && f.detalle.errors }" type="text" class="form-control form-control-user" placeholder="Detalle">
+            </div>
+        </div>
+        <div class="input-group-md-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]="faPhone"></fa-icon></span>
+            
+                <input formControlName="idhabitacion" [(ngModel)]="servicio.idhabitacion" [ngClass]="{'is-invalid': submitted && f.idhabitacion.errors }" type="text" class="form-control form-control-user" placeholder="idhabitacion">
+            </div>
+        </div>
+        <br>
+        <div class="btn-group">
+            
+            <button type="submit"  class="btn btn-success">
+                <fa-icon [icon]='faSave'></fa-icon>&nbsp;Guardar</button>
+            &nbsp;&nbsp;<button type="reset" class="btn btn-danger">
+                <fa-icon [icon]='faTimes' (click)="onReset()"></fa-icon>&nbsp;Cancelar</button>
+        </div>
+    </div>
+</form>

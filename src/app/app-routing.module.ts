@@ -16,11 +16,15 @@ import { ComidaListComponent } from './components/comida-main/comida-list/comida
 import { HabitacionMainComponent } from './components/habitacion-main/habitacion-main.component';
 import { HabitacionListComponent } from './components/habitacion-main/habitacion-list/habitacion-list.component';
 import { HabitacionCardComponent } from './components/habitacion-main/habitacion-card/habitacion-card.component';
+import { ServiceCardComponent } from './components/service-main/service-card/service-card.component';
+import { ServiceMainComponent } from './components/service-main/service-main.component';
+import { UsuarioStatisticsComponent } from './components/usuario-main/usuario-statistics/usuario-statistics.component';
 
 
 const routes: Routes = [
   {path:'',redirectTo:'/',pathMatch:'full'},
   {path: 'user', component: UsuarioMainComponent},
+  {path: 'user/statistics', component: UsuarioStatisticsComponent},
   {path: 'user/:id', component: UsuarioCardComponent},
   {path: 'room', component: CuartoMainComponent},
   {path: 'room/:id', component: CuartoCardComponent},
@@ -30,6 +34,9 @@ const routes: Routes = [
   {path: 'acomm', component: HabitacionMainComponent},
   {path: 'acomm/list', component: HabitacionListComponent},
   {path: 'acomm/:id', component: HabitacionCardComponent},
+  {path: 'service/:id', component: ServiceCardComponent},
+  {path: 'service', component: ServiceMainComponent},
+
 
 ];
 

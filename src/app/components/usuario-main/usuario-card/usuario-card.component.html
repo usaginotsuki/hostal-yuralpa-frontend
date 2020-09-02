@@ -1,56 +1,40 @@
 <div class="col-12">
     <div class="breadcumb-area bg-img">		
-        <div class="bradcumbContent">
-            <h2>Cliente</h2>
+        <div style="text-align: center" class="bradcumbContent">
+            <h2>Cliente: <strong>{{usuario.nombre}} {{usuario.apellido}}</strong> </h2>
         </div>
     </div>
-
-    <div class="top-popular-courses-area mt-100 section-padding-100-70">
-        <section class="contact-area mt-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="contact-content">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="contact-form-area wow fadeInUp" data-wow-delay="500ms">
-
-                                        
-
-<div class="container container-fluid">
-    <div class="d-flex justify-content-around">
-        <div class="media">
-            <div class="media-left">
-            </div>
-            <div class="media-body">
-                <small class="media-heading">Nombre</small>
-                <p class="h6"><strong>{{usuario.nombre}}</strong></p>
-            </div>
-        </div>  
-        <div class="media">
-            <div class="media-left">
-            </div>
-            <div class="media-body">
-                <small class="media-heading">apellido</small>
-                <p class="h6"><strong>{{usuario.apellido}}</strong></p>
-            </div>
-        </div>        
-        <div class="media">
-            <div class="media-left">
-            </div>
-            <div class="media-body">
-                <small class="media-heading">Nacionalidad</small>
-                <p class="h6"><strong>{{usuario.nacionalidad}}</strong></p>
-            </div>
-        </div>
-        
-    </div>
-<hr>
-
-  <hr>
-  
-  
-</div>    
 </div>
 
+<div class="container-fluid" style="text-align: center;">    
+    <div class="row">
+        <div class="col-4">
+
+            <small class="media-heading">Nombre</small><hr>
+            <p class="h6"><strong>{{usuario.nombre}}</strong></p>
+
+        </div>
+        <div class="col-4">
+
+            <small class="media-heading">Apellido</small><hr>
+            <p class="h6"><strong>{{usuario.apellido}}</strong></p>
+              
+        </div>
+        <div class="col-4">
+
+            <small class="media-heading">Pais</small><hr>
+            <p class="h6"><strong>{{usuario.nacionalidad}}</strong></p>
+            
+        </div>
+    </div>
+<br><hr>
+    <div class="row">
+        <hr>
+        <div class="col-12">
+            <small class="media-heading">Numero Telefónico</small><hr>
+            <p class="h6"><strong>+{{usuario.prefijo}} {{usuario.telefono}}</strong></p>
+            
+        </div>
+    </div>
+</div>
 

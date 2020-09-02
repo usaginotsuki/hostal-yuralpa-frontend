@@ -4,6 +4,14 @@
     <div class="card-body">
         <div class="input-group-mb-3">
             <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]="faIdCard"></fa-icon></span>
+            
+                <input formControlName="identification" [(ngModel)]="usuario.identification" [ngClass]="{'is-invalid': submitted && f.identification.errors }" type="text" class="form-control form-control-user" placeholder="ID">
+            </div>
+        </div>
+        <hr>
+        <div class="input-group-mb-3">
+            <div class="input-group-prepend">
                 <span class="input-group-text"><fa-icon [icon]="faUserCircle"></fa-icon></span>
             
                 <input formControlName="nombre" [(ngModel)]="usuario.nombre" [ngClass]="{'is-invalid': submitted && f.nombre.errors }" type="text" class="form-control form-control-user" placeholder="Nombre">
@@ -13,7 +21,6 @@
         <div class="input-group-md-3">
             <div class="input-group-prepend">
                 <span class="input-group-text"><fa-icon [icon]="faUserCircle"></fa-icon></span>
-            
                 <input formControlName="apellido" [(ngModel)]="usuario.apellido" [ngClass]="{'is-invalid': submitted && f.apellido.errors }" type="text" class="form-control form-control-user" placeholder="Apellido">
                 
             </div>
@@ -21,17 +28,23 @@
         <hr>
         <div class="input-group-md-3">
             <div class="input-group-prepend">
-                <span class="input-group-text"><fa-icon [icon]="faGlobe"></fa-icon></span>
-                <mbsc-select formControlName="nacionalidad"  [options]="desktopFilterSettings" [(ngModel)]="usuario.nacionalidad" [ngClass]="{'is-invalid': submitted && f.nacionalidad.errors }" placeholder="Nacionalidad"></mbsc-select>
-            </div>
-        </div>
-      
-        <hr>
-        <div class="input-group-md-3">
-            <div class="input-group-prepend">
                 <span class="input-group-text"><fa-icon [icon]="faPhone"></fa-icon></span>
             
                 <input formControlName="telefono" [(ngModel)]="usuario.telefono" [ngClass]="{'is-invalid': submitted && f.telefono.errors }" type="text" class="form-control form-control-user" placeholder="Telefono">
+                <div *ngIf="submitted && formUsuario.controls.telefono.errors" class="invalid-feedback">
+                    Debe ingresar un numero de telefono
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="input-group-md-3">
+            
+            <div class="input-group-prepend">
+                <span class="input-group-text"><fa-icon [icon]="faGlobe"></fa-icon></span>
+                <mat-select-country appearance="outline" 
+                label="Pais"
+                class="className-md-3" formControlName="nacionalidad"  [(ngModel)]="usuario.nacionalidad" [ngClass]="{'is-invalid': submitted && f.nacionalidad.errors }" placeholder="Nacionalidad">  
+                </mat-select-country>
             </div>
         </div>
         <br>

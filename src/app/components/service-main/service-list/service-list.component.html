@@ -1,0 +1,29 @@
+<h5 style="text-align: center">Listado de Clientes</h5>
+<br>
+<table class="table">
+
+    <thead>
+        <tr>
+            <td>#</td>
+            <td>Servicio</td>
+            <td>Costo</td>
+            <td>Fecha</td>
+            <td>Detalle</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of servicios ; let i=index"> 
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.servicio}}</td>
+            <td>{{item.costo}}</td>
+            <td>{{item.fecha}}</td>
+            <td>{{item.detalle}}</td>
+            <td class="btn-group">
+                <button class="btn btn-sm btn-info" [routerLink]="['/service', item.idservicio]"><fa-icon [icon]='faEye'></fa-icon></button>
+                <button class="btn btn-sm btn-warning" (click)="update(item)"><fa-icon [icon]='faPencilAlt'></fa-icon></button>                
+                <button class="btn btn-sm btn-danger" (click)="delete(item)"><fa-icon [icon]='faTrash'></fa-icon></button>     
+            </td>
+        </tr>
+    </tbody>
+</table>

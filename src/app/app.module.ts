@@ -6,6 +6,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule, Routes } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AngularFireModule } from '@angular/fire'
+import { AngularFireAuth } from  '@angular/fire/auth'
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +30,14 @@ import { ComidaFormComponent } from './components/comida-main/comida-form/comida
 import { HabitacionSearchComponent } from './components/habitacion-main/habitacion-search/habitacion-search.component';
 import { HabitacionCardComponent } from './components/habitacion-main/habitacion-card/habitacion-card.component';
 import { CuartoSearchComponent } from './components/cuarto-main/cuarto-search/cuarto-search.component';
+import { ServiceMainComponent } from './components/service-main/service-main.component';
+import { ServiceListComponent } from './components/service-main/service-list/service-list.component';
+import { ServiceFormComponent } from './components/service-main/service-form/service-form.component';
+import { ServiceCardComponent } from './components/service-main/service-card/service-card.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
+import { UsuarioStatisticsComponent } from './components/usuario-main/usuario-statistics/usuario-statistics.component';
+import { ChartsModule } from 'ng2-charts';
 
 
 const routes:Routes=[
@@ -58,18 +68,36 @@ const routes:Routes=[
     HabitacionSearchComponent,
     HabitacionCardComponent,
     CuartoSearchComponent,
+    ServiceMainComponent,
+    ServiceListComponent,
+    ServiceFormComponent,
+    ServiceCardComponent,
+    UsuarioStatisticsComponent
+
   
   ],
   imports: [ 
+    MatSelectCountryModule,
     MbscModule, 
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FontAwesomeModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
     NgxPaginationModule,
-    
+    AngularFireModule.initializeApp({
+      apiKey: "AIzaSyBjEZmiiYULt5WOsE6Y1eI8Wk-nzruKYs8",
+      authDomain: "hostal-yuralpa.firebaseapp.com",
+      databaseURL: "https://hostal-yuralpa.firebaseio.com",
+      projectId: "hostal-yuralpa",
+      storageBucket: "hostal-yuralpa.appspot.com",
+      messagingSenderId: "841163467981",
+      appId: "1:841163467981:web:0c1b310087059139870d84",
+      measurementId: "G-WY992DD242" 
+           
+    }),
+    NoopAnimationsModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

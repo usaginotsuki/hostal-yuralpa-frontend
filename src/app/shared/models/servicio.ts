@@ -4,5 +4,6 @@ export class Servicio {
     costo:string;
     fecha:Date;
     detalle:string;
+    idhabitacion:string;
 
 }

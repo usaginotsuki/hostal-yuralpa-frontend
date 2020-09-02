@@ -1,7 +1,7 @@
 import { Component, OnInit, SimpleChanges,Input,Output, EventEmitter} from '@angular/core';
 import { UserService } from '../../../core/services/user.service';
 import { Usuario } from '../../../shared/models/usuario';
-import { faEye, faPencilAlt, faTrash, faCamera } from '@fortawesome/free-solid-svg-icons';
+import { faPhoneAlt,faIdBadge, faUserAlt, faFlag,faEye, faPencilAlt, faTrash } from '@fortawesome/free-solid-svg-icons';
 import swal from 'sweetalert2'
 
 @Component({
@@ -16,15 +16,16 @@ export class UsuarioListComponent implements OnInit {
   @Output() userToEdit= new EventEmitter<Usuario>();
   @Input() flagToNext = new EventEmitter<Boolean>();
 
-  p:number=0;
-  l:Number=1;
-
-  usuarios:Usuario[];
-  faCamera=faCamera;
+  faIdBadge=faIdBadge;
+  faUserAlt=faUserAlt;
+  faFlag=faFlag;
   faEye=faEye;
   faPencilAlt=faPencilAlt;
   faTrash=faTrash;
+  faPhoneAlt=faPhoneAlt;
 
+  usuarios:Usuario[];
+ 
   constructor(private userService:UserService) { }
 
   ngOnInit(): void {

@@ -8,7 +8,7 @@ import { retry, catchError, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ServicioService {
-  url : string = "https://hostal-yuralpa.web.app/api/service";
+  url : string = "https://hostal-yuralpa.web.app/api/acomm/service";
   root:string="https://hostal-yuralpa.web.app/api/";
 
   httpOptions={
@@ -51,14 +51,14 @@ export class ServicioService {
   }
 
   count(): Observable<any>  {    
-    return this.http.get<any>( this.root.concat('count/service'), this.httpOptions)
+    return this.http.get<any>( this.root.concat('count/acomm/service'), this.httpOptions)
     .pipe(
       retry(1)     
     );
   }
 
   list(page: number, limit : number): Observable<Servicio[]> {
-    return this.http.get<Servicio[]>(this.root.concat("page/service/") + page + "/" + limit, this.httpOptions)
+    return this.http.get<Servicio[]>(this.root.concat("page/acomm/service/") + page + "/" + limit, this.httpOptions)
       .pipe(
         retry(1)
       );

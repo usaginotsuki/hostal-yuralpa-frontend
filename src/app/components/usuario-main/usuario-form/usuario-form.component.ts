@@ -1,14 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { faUserCircle,faGlobe, faPhone,faSave,faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faUserCircle,faGlobe, faPhone,faSave,faTimes,faIdCard } from '@fortawesome/free-solid-svg-icons';
 import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../../core/services/user.service';
 import { Usuario } from '../../../shared/models/usuario';
 import swal from 'sweetalert2';
-import { mobiscroll, MbscSelectOptions } from '@mobiscroll/angular';
-mobiscroll.settings = {
-  theme: 'ios',
-  themeVariant: 'light'
-};
+
 
 const remoteData = {
   url: 'https://trial.mobiscroll.com/content/countries.json',
@@ -21,52 +17,14 @@ const remoteData = {
   styleUrls: ['./usuario-form.component.css']
 })
 export class UsuarioFormComponent implements OnInit {
-  filter: string;
-    group: string;
-    desktopFilter: string;
-    desktopGroup: string;
-
-    filterSettings: MbscSelectOptions = {
-        display: 'bubble',
-        data: remoteData,
-        filter: true,
-        group: {
-            groupWheel: false,
-            header: false
-        },
-        width: 400
-    };
-    groupSettings: MbscSelectOptions = {
-        display: 'bubble',
-        data: remoteData,
-        group: true,
-        width: [40, 240]
-    };
-    desktopFilterSettings: MbscSelectOptions = {
-        display: 'bubble',
-        touchUi: false,
-        data: remoteData,
-        filter: true,
-        group: {
-            groupWheel: false,
-            header: false
-        },
-        width: 400
-    };
-
-    desktopGroupSettings: MbscSelectOptions = {
-        display: 'bubble',
-        touchUi: false,
-        data: remoteData,
-        group: true
-    };
+  
   faUserCircle=faUserCircle;
   faGlobe=faGlobe;
   faPhone=faPhone;
   faSave=faSave;
   faTimes=faTimes;
   formUsuario:FormGroup;
-
+  faIdCard=faIdCard;
   submitted = false;
   @Input() usuario: Usuario;    
   @Input() title:String;
@@ -79,8 +37,10 @@ export class UsuarioFormComponent implements OnInit {
       nombre:['',[Validators.required]],
       apellido:['',[Validators.required]],
       nacionalidad:['',[Validators.required]],
-      telefono:['',[Validators.required]]
-    });
+      telefono:['',[Validators.required, Validators.pattern("^[0-9]*$")]],
+      identification:['',[Validators.required]],
+    
+    }); 
   }
 
   get f(){
@@ -99,10 +59,16 @@ export class UsuarioFormComponent implements OnInit {
       console.log('Formulario invalido');
       return;
     }
-
+    this.usuario.prefijo =(Object.values(this.usuario.nacionalidad)[3]);
+    this.usuario.nacionalidad = (Object.values(this.usuario.nacionalidad)[0]);
+    console.log(this.usuario.nacionalidad);
+    /*console.log(nacion)
+    let nacion2 = (JSON.stringify(nacion));
+    console.log(nacion2[2]);*/
     this.userService.save(this.usuario).subscribe(
       result=>{
         this.submitted=false;
+        
         if(result.icon==="success"){
           console.log("Flag form success");
           swal.fire(result);

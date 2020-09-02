@@ -1,23 +1,25 @@
 <h5 style="text-align: center">Listado de Clientes</h5>
 <br>
-<table class="table">
+<table mdbTable class="table" hover="true">
 
-    <thead>
+    <thead class="grey lighten-1 black-text"> 
         <tr>
             <td>#</td>
-            <td>Nombre</td>
-            <td>Apellido</td>
-            <td>Nacionalidad</td>
-            <td>Telefono</td>
+            <td><fa-icon [icon]="faIdBadge"></fa-icon><br>  ID</td>
+            <td><fa-icon [icon]="faUserAlt"></fa-icon><br> Nombre</td>
+            <td><fa-icon [icon]="faUserAlt"></fa-icon><br> Apellido</td>
+            <td><fa-icon [icon]="faFlag"></fa-icon><br> Nacionalidad</td>
+            <td><fa-icon [icon]="faPhoneAlt"></fa-icon><br> Telefono</td>
             <td></td>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of usuarios ; let i=index"> 
+        <tr   mdbTableCol *ngFor="let item of usuarios ; let i=index"> 
             <th scope="row">{{i+1}}</th>
-            <td>{{item.nombre}}</td>
-            <td>{{item.apellido}}</td>
-            <td>{{item.nacionalidad}}</td>
+            <td>{{item.identification}}</td>
+            <td>{{item.nombre | titlecase}}</td>
+            <td>{{item.apellido | titlecase}}</td>
+            <td>{{item.nacionalidad | titlecase}}</td>
             <td>{{item.telefono}}</td>
             <td class="btn-group">
                 <button class="btn btn-sm btn-info" [routerLink]="['/user', item.idusuario]"><fa-icon [icon]='faEye'></fa-icon></button>
