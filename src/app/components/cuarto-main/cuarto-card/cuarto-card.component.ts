@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faWind, faUser, faIdCard, faCalendar, faMapMarkedAlt, faPhone, faAt, faRoad  } from '@fortawesome/free-solid-svg-icons';
+import { faSave, faTimes,faUsersCog, faWifi, faWind, faEye, faPencilAlt, faTrash, faBed, faDoorClosed, faMoneyBillWave, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { Cuarto } from 'src/app/shared/models/cuarto';
 import { CuartoService } from 'src/app/core/services/cuarto.service';
 import { ActivatedRoute } from '@angular/router';
@@ -12,14 +12,19 @@ import {BooleanPipe} from '../../../shared/pipes/boolean.pipe';
 })
 
 export class CuartoCardComponent implements OnInit {
-  faUser = faUser;    
-  faIdCard = faIdCard;
-  faCalendar = faCalendar;
-  faMapMarkedAlt = faMapMarkedAlt;
-  faPhone = faPhone;
-  faAt = faAt;
-  faRoad = faRoad;
+
+  faSave=faSave;
+  faTimes=faTimes;
+  faUsersCog=faUsersCog;
+  faWifi=faWifi;
   faWind=faWind;
+  faUsers=faUsers;
+  faMoneyBillWave=faMoneyBillWave;
+  faBed=faBed;
+  faEye=faEye;
+  faPencilAlt=faPencilAlt;
+  faTrash=faTrash;
+  faDoorClosed=faDoorClosed;
 
 
   cuarto:Cuarto=new Cuarto();

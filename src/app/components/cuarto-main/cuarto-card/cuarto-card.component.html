@@ -1,64 +1,58 @@
 <div class="col-12">
     <div class="breadcumb-area bg-img">		
-        <div class="bradcumbContent">
-            <h2>Cuarto</h2>
+        <div style="text-align: center" class="bradcumbContent">
+            <h2>Cuarto: <strong>{{cuarto.num_habitacion}} </strong> </h2>
         </div>
     </div>
-
-    <div class="top-popular-courses-area mt-100 section-padding-100-70">
-        <section class="contact-area mt-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="contact-content">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="contact-form-area wow fadeInUp" data-wow-delay="500ms">
-
-                                        
-
-<div class="container container-fluid">
-    <div class="d-flex justify-content-around">
-        <div class="media">
-            <div class="media-left">
-            </div>
-            
-                
-       
-            <div class="media-body">
-                <div class="media-heading">Num Habitacion</div>
-                <br>
-                <span><fa-icon class="mr-3 fa-2x" [icon]="faWind"></fa-icon></span>
-                <p class="h6"><strong>{{cuarto.num_habitacion}}</strong></p>
-            </div>
-        </div>  
-        <div class="media">
-            <div class="media-left">
-            </div>
-            <div class="media-body">
-                <small class="media-heading">Internet</small>
-                <p class="h6"><strong>{{cuarto.internet | boolean}}</strong></p>
-            </div>
-        </div>        
-        <div class="media">
-            <div class="media-left">
-            </div>
-            <div class="media-body">
-                <small class="media-heading">Aire</small>
-                <br>
-                <span><fa-icon class="mr-3 fa-2x" [icon]="faWind"></fa-icon></span>
-
-                <p class="h6"><strong>{{cuarto.aire | boolean}}</strong></p>
-            </div>
-        </div>
-        
-    </div>
-<hr>
-
-  <hr>
-  
-  
-</div>    
 </div>
+<hr>
+<div class="container-fluid" style="text-align: center;">    
+    <div class="row">
+        <div class="col-4">
 
+            <small class="media-heading"># de cuarto</small>
+            <br>
+            <span><fa-icon class="fa-2x" [icon]="faDoorClosed"></fa-icon></span>  <hr>
+            <p class="h6"><strong>{{cuarto.num_habitacion}}</strong></p>
+
+        </div>
+        <div class="col-4">
+            <small class="media-heading"># de camas</small>
+            <br>
+            <span><fa-icon class="fa-2x" [icon]="faBed"></fa-icon></span>  <hr>
+            <p class="h6"><strong>{{cuarto.camas}}</strong></p>
+              
+        </div>
+        <div class="col-4">
+
+            <small class="media-heading">Disponible</small>
+            <br>
+            <span><fa-icon class="fa-2x" [icon]="faUsers"></fa-icon></span>  <hr>
+            <p class="h6"><strong>{{cuarto.disponibilidad | boolean}}</strong></p>
+            
+        </div>
+    </div>
+<br><hr>
+    <div class="row">
+        <hr>
+        <div class="col-4">
+            <small class="media-heading">Compartido</small><br>
+            <span><fa-icon class="fa-2x" [icon]="faUsersCog"></fa-icon></span>  <hr>
+            <p class="h6"><strong>{{cuarto.compartido | boolean}}</strong></p>
+            
+        </div>
+        <div class="col-4">
+            <small class="media-heading">Internet</small><br>
+            <span><fa-icon class="fa-2x" [icon]="faWifi"></fa-icon></span>  <hr>
+            <p class="h6"><strong>{{cuarto.internet | boolean}}</strong></p>
+            
+        </div>
+        <div class="col-4">
+            <small class="media-heading">Aire</small><br>
+            <span><fa-icon class="fa-2x" [icon]="faWind"></fa-icon></span>  <hr>
+            <p class="h6"><strong>{{cuarto.internet | boolean}} </strong></p>
+            
+        </div>
+    </div>
+</div>
 

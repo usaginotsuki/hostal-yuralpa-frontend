@@ -4,9 +4,13 @@
     <div class="card-body">
         <div class="input-group-mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text"><fa-icon [icon]="faUserCircle"></fa-icon></span>
-            
-                <input formControlName="num_cuarto" [(ngModel)]="habitacion.num_cuarto" [ngClass]="{'is-invalid': submitted && f.num_cuarto.errors }" type="text" class="form-control form-control-user" placeholder="Numero de cuarto">
+                <span class="input-group-text"><fa-icon [icon]="faUserCircle"></fa-icon></span>                        
+                <div class="btn-group mr-12">
+                    <select  class="form-control" formControlName="num_cuarto" [(ngModel)]="habitacion.num_cuarto" [ngClass]="{'is-invalid': submitted && f.num_cuarto.errors }" placeholder="Disponibilidad">
+                    <option disabled>--Numero de habitacion--</option>
+                    <option *ngFor="let item of nums; let i=index">{{nums[i]}}</option>
+                </select>
+            </div>
             </div>
         </div>
         <hr>
@@ -37,24 +41,7 @@
             </div>
         </div>
         <hr>
-        <div class="input-group-md-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text"><fa-icon [icon]="faUserCircle"></fa-icon></span>
-            
-                <input formControlName="idusuario" type="text" [(ngModel)]="habitacion.idusuario" [ngClass]="{'is-invalid': submitted && f.idusuario.errors }" class="form-control form-control-user" placeholder="idusuario">
-                
-            </div>
-        </div>
-        <hr>
-        <div class="input-group-md-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text"><fa-icon [icon]="faUserCircle"></fa-icon></span>
-            
-                <input formControlName="idcuarto" type="text" [(ngModel)]="habitacion.idcuarto" [ngClass]="{'is-invalid': submitted && f.idcuarto.errors }" class="form-control form-control-user" placeholder="idcuarto">
-                
-            </div>
-        </div>
-        <hr>
+        
         <br>
         <div class="btn-group">
             
@@ -65,3 +52,60 @@
         </div>
     </div>
 </form>
+
+
+    <h6>Usuarios</h6>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>N°</th>
+                <th>ID </th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>
+                    <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModal">
+                        <fa-icon [icon]='faSave'></fa-icon>
+                    </button>
+                </th>                                                        
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of habitacion.usuario; let i=index">
+                <td>
+                    {{i+1}}
+                </td>
+                <td>
+                    {{item.identification}}
+                </td>
+                <td>
+                    {{item.nombre}}
+                </td>
+                <td>
+                    {{item.apellido}}
+                </td>
+                <td>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+               
+
+
+<div class="col-4">
+<pre>
+{{habitacion|json}}
+</pre>
+</div>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+
+<app-usuario-search (userFound)="addUser($event)"></app-usuario-search>
+
+</div>
+</div>
+</div>
+

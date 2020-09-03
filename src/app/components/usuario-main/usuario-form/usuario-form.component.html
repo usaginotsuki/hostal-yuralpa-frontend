@@ -4,7 +4,7 @@
     <div class="card-body">
         <div class="input-group-mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text"><fa-icon [icon]="faIdCard"></fa-icon></span>
+                <span class="input-group-text"><fa-icon [icon]="faIdCard"></fa-icon></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             
                 <input formControlName="identification" [(ngModel)]="usuario.identification" [ngClass]="{'is-invalid': submitted && f.identification.errors }" type="text" class="form-control form-control-user" placeholder="ID">
             </div>
@@ -12,7 +12,7 @@
         <hr>
         <div class="input-group-mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text"><fa-icon [icon]="faUserCircle"></fa-icon></span>
+                <span class="input-group-text"><fa-icon [icon]="faUserCircle"></fa-icon></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             
                 <input formControlName="nombre" [(ngModel)]="usuario.nombre" [ngClass]="{'is-invalid': submitted && f.nombre.errors }" type="text" class="form-control form-control-user" placeholder="Nombre">
             </div>
@@ -20,7 +20,7 @@
         <hr>
         <div class="input-group-md-3">
             <div class="input-group-prepend">
-                <span class="input-group-text"><fa-icon [icon]="faUserCircle"></fa-icon></span>
+                <span class="input-group-text"><fa-icon [icon]="faUserCircle"></fa-icon></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input formControlName="apellido" [(ngModel)]="usuario.apellido" [ngClass]="{'is-invalid': submitted && f.apellido.errors }" type="text" class="form-control form-control-user" placeholder="Apellido">
                 
             </div>
@@ -28,7 +28,7 @@
         <hr>
         <div class="input-group-md-3">
             <div class="input-group-prepend">
-                <span class="input-group-text"><fa-icon [icon]="faPhone"></fa-icon></span>
+                <span class="input-group-text"><fa-icon [icon]="faPhone"></fa-icon></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             
                 <input formControlName="telefono" [(ngModel)]="usuario.telefono" [ngClass]="{'is-invalid': submitted && f.telefono.errors }" type="text" class="form-control form-control-user" placeholder="Telefono">
                 <div *ngIf="submitted && formUsuario.controls.telefono.errors" class="invalid-feedback">
@@ -40,7 +40,7 @@
         <div class="input-group-md-3">
             
             <div class="input-group-prepend">
-                <span class="input-group-text"><fa-icon [icon]="faGlobe"></fa-icon></span>
+                <span class="input-group-text"><fa-icon [icon]="faGlobe"></fa-icon></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <mat-select-country appearance="outline" 
                 label="Pais"
                 class="className-md-3" formControlName="nacionalidad"  [(ngModel)]="usuario.nacionalidad" [ngClass]="{'is-invalid': submitted && f.nacionalidad.errors }" placeholder="Nacionalidad">  

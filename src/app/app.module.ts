@@ -38,6 +38,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
 import { UsuarioStatisticsComponent } from './components/usuario-main/usuario-statistics/usuario-statistics.component';
 import { ChartsModule } from 'ng2-charts';
+import { UsuarioSearchComponent } from './components/usuario-main/usuario-search/usuario-search.component';
 
 
 const routes:Routes=[
@@ -72,7 +73,8 @@ const routes:Routes=[
     ServiceListComponent,
     ServiceFormComponent,
     ServiceCardComponent,
-    UsuarioStatisticsComponent
+    UsuarioStatisticsComponent,
+    UsuarioSearchComponent
 
   
   ],

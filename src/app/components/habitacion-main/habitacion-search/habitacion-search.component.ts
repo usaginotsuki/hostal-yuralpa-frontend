@@ -22,7 +22,7 @@ export class HabitacionSearchComponent implements OnInit {
   }
 
   list() : void {
-    this.acommService.list(1,10).subscribe(result => this.acomms = result);
+    this.acommService.list(1,1000).subscribe(result => this.acomms = result);
   }
 
   select(a:Habitacion) :void {

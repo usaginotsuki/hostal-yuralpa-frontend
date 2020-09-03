@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { faUserCircle,faGlobe, faPhone,faSave,faTimes,faWind } from '@fortawesome/free-solid-svg-icons';
+import { faSave, faTimes,faUsersCog, faWifi, faWind, faEye, faPencilAlt, faTrash, faBed, faDoorClosed, faMoneyBillWave, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { CuartoService } from '../../../core/services/cuarto.service';
 import { Cuarto } from '../../../shared/models/cuarto';
@@ -12,12 +12,20 @@ import swal from 'sweetalert2';
 })
 
 export class CuartoFormComponent implements OnInit {
-  faUserCircle=faUserCircle;
-  faGlobe=faGlobe;
-  faPhone=faPhone;
+
   faSave=faSave;
   faTimes=faTimes;
+  faUsersCog=faUsersCog;
+  faWifi=faWifi;
   faWind=faWind;
+  faUsers=faUsers;
+  faMoneyBillWave=faMoneyBillWave;
+  faBed=faBed;
+  faEye=faEye;
+  faPencilAlt=faPencilAlt;
+  faTrash=faTrash;
+  faDoorClosed=faDoorClosed;
+
   formCuarto:FormGroup;
   
   submitted = false;
@@ -30,12 +38,12 @@ export class CuartoFormComponent implements OnInit {
   ngOnInit(): void {
     this.formCuarto=this.formBuilder.group({
       aire:['',[Validators.required]],
-      camas:['',[Validators.required]],
+      camas:['',[Validators.required, Validators.pattern("^[0-9]*$")]],
       compartido:['',[Validators.required]],
-      costo:['',[Validators.required]],
+      costo:['',[Validators.required, Validators.pattern("^[0-9]*$")]],
       disponibilidad:['',[Validators.required]],
       internet:['',[Validators.required]],
-      num_habitacion:['',[Validators.required]],
+      num_habitacion:['',[Validators.required, Validators.pattern("^[0-9]*$") ]],
     });
   }
 

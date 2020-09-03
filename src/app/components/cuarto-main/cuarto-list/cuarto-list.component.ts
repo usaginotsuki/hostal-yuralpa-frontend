@@ -1,7 +1,7 @@
 import { Component, OnInit, SimpleChanges,Input,Output, EventEmitter, Pipe } from '@angular/core';
 import {CuartoService} from '../../../core/services/cuarto.service';
 import{Cuarto} from '../../../shared/models/cuarto'
-import { faEye, faPencilAlt, faTrash, faCamera } from '@fortawesome/free-solid-svg-icons';
+import { faUsersCog, faWifi, faWind, faEye, faPencilAlt, faTrash, faBed, faDoorClosed, faMoneyBillWave, faUsers } from '@fortawesome/free-solid-svg-icons';
 import swal from 'sweetalert2'
 import {BooleanPipe} from '../../../shared/pipes/boolean.pipe';
 
@@ -12,21 +12,22 @@ import {BooleanPipe} from '../../../shared/pipes/boolean.pipe';
 })
 
 export class CuartoListComponent implements OnInit {
-
+  cuartos:Cuarto[];
   @Input() flagToReload : Boolean=false;
   @Output() reloadComplete=new EventEmitter<Boolean>(); 
   @Output() userToEdit= new EventEmitter<Cuarto>();
   @Input() flagToNext = new EventEmitter<Boolean>();
 
-  p:number=0;
-  l:Number=1;
-
-  cuartos:Cuarto[];
-  faCamera=faCamera;
+  faUsersCog=faUsersCog;
+  faWifi=faWifi;
+  faWind=faWind;
+  faUsers=faUsers;
+  faMoneyBillWave=faMoneyBillWave;
+  faBed=faBed;
   faEye=faEye;
   faPencilAlt=faPencilAlt;
   faTrash=faTrash;
-
+  faDoorClosed=faDoorClosed;
  
   constructor(private cuartoService:CuartoService) { }
  

@@ -1,25 +1,32 @@
 <div class="container-fluid" style="text-align: center;">
     <div class="row media">    
-        <div class="media-body">
+        <div class=" media-body">
           <h4 class="media-heading">Gestión del hotel</h4>
           <p>Revision de cuartos</p>      
         </div>   
       </div>
-    <hr/>
-    <div class="row">
-      <app-cuarto-list [flagToReload]="mainReload"
-      (reloadComplete)="reloadDone($event)"
-      (userToEdit)="mainUpdate($event)"
-      ></app-cuarto-list>
-     <hr>
-    <app-cuarto-form [cuarto]="mainCuarto" 
-     [title]="mainTitle" 
-     (flagToReload)="reloadToDo($event)"
-     >
-    </app-cuarto-form>
+</div>
+<div class="container-fluid" style="text-align: center;">
+  <div class="row media">    
+      <div class="col-12 media-body">
+        <app-cuarto-list [flagToReload]="mainReload"
+        (reloadComplete)="reloadDone($event)"
+        (userToEdit)="mainUpdate($event)">
+        </app-cuarto-list>
+        <hr><br>
+      </div>  
+  </div>
 
-    <hr>
+  <div class="row media">
 
-    </div>
-    
-    </div>
+      <div class="col-5">
+        <app-cuarto-form [cuarto]="mainCuarto" 
+        [title]="mainTitle" 
+        (flagToReload)="reloadToDo($event)"
+        >
+       </app-cuarto-form>
+
+      </div>
+
+  </div>
+</div>

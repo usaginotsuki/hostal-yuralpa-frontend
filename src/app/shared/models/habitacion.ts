@@ -1,15 +1,13 @@
 import {Cuarto} from './cuarto';
 import {Usuario} from './usuario'
 export class Habitacion {
-    idhabitacion:string;
-    fecha_entrada:string;
-    fecha_salida:string;
+    idhabitacion?:string;
+    fecha_entrada:Date;
+    fecha_salida:Date;
     num_cuarto:string;
     observaciones:string;
-    idusuario:string;
-    idcuarto:string; 
-    cuarto?:Cuarto;
-    usuario?:Usuario;
+    cuarto:Cuarto;
+    usuario:Array<Usuario>=[];
     
 
 }
