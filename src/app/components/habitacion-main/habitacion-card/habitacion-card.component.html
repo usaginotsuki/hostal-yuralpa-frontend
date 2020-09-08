@@ -1,56 +1,67 @@
-<div class="col-12">
+<div class="col-12" style="text-align: center;">
     <div class="breadcumb-area bg-img">		
         <div class="bradcumbContent">
-            <h2>Alojamiento</h2>
+            <h2>Alojamiento - Habitacion #{{habitacion.num_cuarto}}</h2>
         </div>
     </div>
+</div>
 
-    <div class="top-popular-courses-area mt-100 section-padding-100-70">
-        <section class="contact-area mt-100">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="contact-content">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="contact-form-area wow fadeInUp" data-wow-delay="500ms">
-
-                                        
-
-<div class="container container-fluid">
-    <div class="d-flex justify-content-around">
-        <div class="media">
-            <div class="media-left">
+<div class="container container-fluid"><br>
+    <div class="row">
+        <div class="col-12 d-flex justify-content-around">
+            <div class="media">
+                <div class="media-body">
+                    <small class="media-heading"># de cuarto</small><br>
+                    <p class="h6"><strong>{{habitacion.num_cuarto}}</strong></p>
+                </div>
+            </div>  
+            <div class="media">
+                <div class="media-body">
+                    <small class="media-heading">Fecha de entrada</small><br>
+                    <p class="h6"><strong>{{habitacion.fecha_entrada}}</strong></p>
+                </div>
+            </div>        
+            <div class="media">
+                <div class="media-body">
+                    <small class="media-heading">Fecha de salida</small><br>
+                    <p class="h6"><strong>{{habitacion.fecha_salida}}</strong></p>
+                </div>
             </div>
-            <div class="media-body">
-                <small class="media-heading"># de cuarto</small>
-                <p class="h6"><strong>{{habitacion.num_cuarto}}</strong></p>
-            </div>
-        </div>  
-        <div class="media">
-            <div class="media-left">
-            </div>
-            <div class="media-body">
-                <small class="media-heading">Fecha de entrada</small>
-                <p class="h6"><strong>{{habitacion.fecha_entrada}}</strong></p>
-            </div>
-        </div>        
-        <div class="media">
-            <div class="media-left">
-            </div>
-            <div class="media-body">
-                <small class="media-heading">Fecha de salida</small>
-                <p class="h6"><strong>{{habitacion.fecha_salida}}</strong></p>
-            </div>
+            
         </div>
-        
     </div>
+    
 <hr>
 
-  <hr>
-  
-  
 </div>    
+<div class="container" style="text-align: center; background-color:floralwhite;">
+    <div class="row">
+        <table class="table ">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Numero telefonico</th>
+                    <th scope="col"> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of habitacion.usuario; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.apellido}}</td>
+                    <td>+{{item.prefijo}} {{item.telefono}}</td>
+                    <td class="btn-group">
+                        <button class="btn btn-sm btn-info" [routerLink]="['/user', item.idusuario]"><fa-icon [icon]='faEye'></fa-icon></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
 </div>
+  
+  
 
 

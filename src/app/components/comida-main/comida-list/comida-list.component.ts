@@ -1,7 +1,7 @@
 import { Component, OnInit, SimpleChanges,Input,Output, EventEmitter} from '@angular/core';
 import { ComidaService } from '../../../core/services/comida.service';
 import { Comida } from '../../../shared/models/comida';
-import { faEye, faPencilAlt, faTrash, faCamera } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faEye, faPencilAlt, faTrash, faCamera, faDollarSign } from '@fortawesome/free-solid-svg-icons';
 import swal from 'sweetalert2'
 
 @Component({
@@ -20,6 +20,8 @@ export class ComidaListComponent implements OnInit {
   faEye=faEye;
   faPencilAlt=faPencilAlt;
   faTrash=faTrash;
+  faPlus=faPlus;
+  faDollarSign=faDollarSign;
 
   constructor(private comidaService:ComidaService) { }
   

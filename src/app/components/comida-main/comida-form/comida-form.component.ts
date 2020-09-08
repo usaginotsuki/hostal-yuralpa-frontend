@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { faPlusSquare, faTimes, faCalendar, faQuoteRight, faSave, faComment, faHourglass } from '@fortawesome/free-solid-svg-icons';
+import { faTrash,faUtensils, faPlusSquare, faTimes, faCalendar, faQuoteRight, faSave, faComment, faHourglass, faDollarSign } from '@fortawesome/free-solid-svg-icons';
 import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { ComidaService } from '../../../core/services/comida.service';
 import { Comida } from '../../../shared/models/comida';
@@ -22,7 +22,9 @@ export class ComidaFormComponent implements OnInit {
   faQuoteRight = faQuoteRight;
   faHourglass=faHourglass;
   faPlusSquare = faPlusSquare;
-
+  faDollarSign=faDollarSign;
+  faUtensils=faUtensils;
+  faTrash=faTrash;
   formComida:FormGroup;
   comida:Comida;
   submitted: boolean  = true;
@@ -97,16 +99,48 @@ export class ComidaFormComponent implements OnInit {
     }
   
     addMeal($event){ //Vincula un evento Output de otro componente
-      console.log($event);
+      let isNot:Boolean=true;
+       console.log($event)
+      for( let i in this.comida.acomms){
+       
+        console.log(this.comida.acomms[i])
+        if (this.comida.acomms[i].idhabitacion==$event.idhabitacion){
+          isNot=false;
+          let timerInterval;
+          swal.fire({
+            title: 'Habitacion añadida previamente',
+            timer:1000,
+            timerProgressBar:true,     
+            onClose: () => {
+              clearInterval(timerInterval)
+            }
+          })
+        }
+      }
+      console.log(isNot);
+      if(isNot){
+        let newAcomm = new Habitacion();
+        newAcomm.idhabitacion=$event.idhabitacion;
+        newAcomm.num_cuarto = $event.num_cuarto;
+        newAcomm.fecha_salida = $event.fecha_salida;        
+        newAcomm.observaciones = $event.observaciones;   
+        this.comida.acomms.push(newAcomm);
+        console.log($event);
+      }
+      
       //Nuevo participante del proyecto
-      let newAcomm = new Habitacion();
-      newAcomm.num_cuarto = $event.num_cuarto;
-      newAcomm.fecha_salida = $event.fecha_salida;        
-      newAcomm.observaciones = $event.observaciones;   
-      this.comida.acomms.push(newAcomm);
+      
     }
-  
-  
+
+    delete(habitacion:Habitacion){
+      let j=0;
+      for(let i in this.comida.acomms){
+        if(this.comida.acomms[i]==habitacion){
+              this.comida.acomms.splice(j,1);  
+        }
+        j++;
+      }
+    }
   
   
                         

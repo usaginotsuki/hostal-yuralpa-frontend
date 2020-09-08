@@ -1,126 +1,118 @@
-
-<div class="col-12">
+<div class="col-12" style="text-align: center;">
     <div class="breadcumb-area bg-img">		
             <div class="bradcumbContent">
-                <h2>{{title}}</h2>
+                <br><hr><h2>{{title}}</h2>
             </div>
-        </div>
-        <div class="top-popular-courses-area mt-100 section-padding-100-70">
-            <section class="contact-area mt-100">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-8">
-                            <div class="contact-content">
-                                <div class="row">
-                                    <h5>Registro diario de comidas</h5>																
-                                    <div class="col-12">
-                                        <div class="contact-form-area wow fadeInUp" data-wow-delay="500ms">										    
-                                            <form [formGroup]="formComida" (ngSubmit)="onSubmit()" >
-                                                <div class="row d-flex align-items-center">
-                                                    <div class="col-1">											
-                                                        <fa-icon class="fa-2x" [icon]="faQuoteRight"></fa-icon>
-                                                    </div>
-                                                    <div class="col-2">											
-                                                        <h6>Comida: &nbsp;</h6>
-                                                    </div>
-                                                    <div class="col ml-1">													
-                                                        <input formControlName="comida" type="text" class="form-control" [(ngModel)]="comida.comida" [ngClass]="{'is-invalid': submitted && f.comida.errors}"/>
-                                                        <div class="invalid-feedback" *ngIf=" submitted && f.comida.errors" class="invalid-feedback">
-                                                            <small *ngIf=" submitted && f.comida.errors.required">El nombre de la comida es requerido</small>
-                                                        </div>													
-                                                    </div>                                                                                                                                                                         
-                                                </div><br>
-                                                <div class="row d-flex align-items-top">
-                                                    <div class="col-1">											
-                                                        <fa-icon class="fa-2x" [icon]="faComment"></fa-icon>
-                                                    </div>
-                                                    <div class="col-2">											
-                                                        <h6>Costo:</h6>
-                                                    </div>
-                                                    <div class="col ml-1">													
-                                                        <input formControlName="costo" type="text" class="form-control" [(ngModel)]="comida.costo" [ngClass]="{'is-invalid': submitted && f.costo.errors}"/>
-                                                    </div>																													
-                                                </div><br>
-                                                <div class="row d-flex align-items-center">
-                                                    <div class="col-1">											
-                                                        <fa-icon class="fa-2x" [icon]="faCalendar"></fa-icon>
-                                                    </div>
-                                                    <div class="col-2">											
-                                                        <h6>Fecha:</h6>
-                                                    </div>
-                                                    <div class="col-6 ml-1">													
-                                                        <input formControlName="fecha" type="date" class="form-control" [(ngModel)]="comida.fecha" [ngClass]="{'is-invalid': submitted && f.fecha.errors}" />                                                                    
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <br>
-                                                    <div class="row d-flex align-items-top">
-                                                        <div class="col-1">											
-                                                            <fa-icon class="fa-2x" [icon]="faComment"></fa-icon>
-                                                        </div>
-                                                        <div class="col-4">											
-                                                            <h6>Observaciones:</h6>
-                                                        </div>
-                                                        <div class="col ml-2">													
-                                                            <input formControlName="observaciones" type="text" class="form-control" [(ngModel)]="comida.observaciones" [ngClass]="{'is-invalid': submitted && f.observaciones.errors}"/>
-                                                        </div>																													
-                                                    </div><br>                
-                                                </div>
-                                                <div class="d-flex justify-content-end">																																
-                                                    <button class="btn btn-sm academy-btn btn-3" type="submit"><fa-icon [icon]='faSave'></fa-icon>&nbsp;Guardar</button>
-                                                    <button (click)="onReset()"  class="btn btn-sm academy-btn btn-2 ml-2" type="button"><fa-icon [icon]='faTimes'></fa-icon>&nbsp;Cancelar</button>												
-                                                </div>	                        
-                                            </form>
-                                            <br>
-                                            <h6>Alojamientos</h6>
-                                            <table class="table table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th>N°</th>
-                                                        <th># de cuarto </th>
-                                                        <th>Observaciones</th>
-                                                        <th>Fecha de Salida</th>
-                                                        <th>
-                                                            <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModal">
-                                                                <fa-icon [icon]='faPlusSquare'></fa-icon>
-                                                            </button>
-                                                        </th>                                                        
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr *ngFor="let item of comida.acomms; let i=index">
-                                                        <td>
-                                                            {{i+1}}
-                                                        </td>
-                                                        <td>
-                                                            {{item.num_cuarto}}
-                                                        </td>
-                                                        <td>
-                                                            {{item.observaciones}}
-                                                        </td>
-                                                        <td>
-                                                            {{item.fecha_salida}}
-                                                        </td>
-                                                        <td>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>                
-                            
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <pre>
-                                {{comida|json}}
-                            </pre>
-                        </div>
+    </div>
+</div>
+<div class="container">
+
+    <div class="row" style="text-align: center;">
+        <div class="col-3"></div>
+        <div class="col-6" style="text-align: center;"><br><hr>
+            <h5>Registro diario de comidas</h5><hr>	
+
+            <form [formGroup]="formComida" (ngSubmit)="onSubmit()" >
+                <div class="row d-flex align-items-center">
+                    <div class="col-1">											
+                        <fa-icon class="fa-2x" [icon]="faUtensils"></fa-icon>
+                    </div>
+                    <div class="col-2">											
+                        <h6>Comida: &nbsp;</h6>
+                    </div>
+                    <div class="col ml-1 ">													
+                        <input formControlName="comida" type="text" class="form-control" [(ngModel)]="comida.comida" [ngClass]="{'is-invalid': submitted && f.comida.errors}"/>
+                        <div class="invalid-feedback" *ngIf=" submitted && f.comida.errors" class="invalid-feedback">
+                            <small *ngIf=" submitted && f.comida.errors.required">El nombre de la comida es requerido</small>
+                        </div>													
+                    </div>                                                                                                                                                                         
+                </div><br>
+                <div class="row d-flex align-items-top">
+                    <div class="col-1">											
+                        <fa-icon class="fa-2x" [icon]="faDollarSign"></fa-icon>
+                    </div>
+                    <div class="col-2">											
+                        <h6>Costo:</h6>
+                    </div>
+                    <div class="col-6 ml-1">													
+                        <input formControlName="costo" type="text" class="form-control" [(ngModel)]="comida.costo" [ngClass]="{'is-invalid': submitted && f.costo.errors}"/>
+                    </div>																													
+                </div><br>
+                <div class="row d-flex align-items-center">
+                    <div class="col-1">											
+                        <fa-icon class="fa-2x" [icon]="faCalendar"></fa-icon>
+                    </div>
+                    <div class="col-2">											
+                        <h6>Fecha:</h6>
+                    </div>
+                    <div class="col-6 ml-1">													
+                        <input formControlName="fecha" type="date" class="form-control" [(ngModel)]="comida.fecha" [ngClass]="{'is-invalid': submitted && f.fecha.errors}" />                                                                    
                     </div>
                 </div>
-            </section>
+                <div>
+                    <br>
+                    <div class="row d-flex align-items-top">
+                        <div class="col-1">											
+                            <fa-icon class="fa-2x" [icon]="faComment"></fa-icon>
+                        </div>
+                        <div class="col-4">											
+                            <h6>Observaciones:</h6>
+                        </div>
+                        <div class="col ml-2">													
+                            <input formControlName="observaciones" type="text" class="form-control" [(ngModel)]="comida.observaciones" [ngClass]="{'is-invalid': submitted && f.observaciones.errors}"/>
+                        </div>																													
+                    </div><br>                
+                </div>
+                <div class="d-flex justify-content-end">																																
+                    <button class="btn btn-sm academy-btn btn-3" type="submit"><fa-icon [icon]='faSave'></fa-icon>&nbsp;Guardar</button>
+                    <button (click)="onReset()"  class="btn btn-sm academy-btn btn-2 ml-2" type="button"><fa-icon [icon]='faTimes'></fa-icon>&nbsp;Cancelar</button>												
+                </div>	                        
+            </form>
+            <br>
         </div>
+
+    </div>
+
+</div>
+<h6>Alojamientos</h6>
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>N°</th>
+            <th># de cuarto </th>
+            <th>Observaciones</th>
+            <th>Fecha de Salida</th>
+            <th>
+                <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#exampleModal">
+                    <fa-icon [icon]='faPlusSquare'></fa-icon>
+                </button>
+            </th>                                                        
+        </tr>
+    </thead>
+                                           
+
+
+    <tbody>
+        <tr *ngFor="let item of comida.acomms; let i=index">
+            <td>
+                {{i+1}}
+            </td>
+            <td>
+                {{item.num_cuarto}}
+            </td>
+            <td>
+                {{item.observaciones}}
+            </td>
+            <td>
+                {{item.fecha_salida}}
+            </td>
+            <td>
+                <button class="btn btn-sm btn-danger" (click)="delete(item)"><fa-icon [icon]='faTrash'></fa-icon></button>
+            </td>
+        </tr>
+    </tbody>
+</table>                                                
+                                       
 
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -132,4 +124,3 @@
             </div>
         </div>
 
-    </div>

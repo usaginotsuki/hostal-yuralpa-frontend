@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faUser, faIdCard, faCalendar, faMapMarkedAlt, faPhone, faAt, faRoad  } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faIdCard, faCalendar, faMapMarkedAlt, faPhone, faAt, faRoad, faEye  } from '@fortawesome/free-solid-svg-icons';
 import { Habitacion } from 'src/app/shared/models/habitacion';
 import { HabitacionService } from 'src/app/core/services/habitacion.service';
 import { ActivatedRoute } from '@angular/router';
@@ -18,6 +18,7 @@ export class HabitacionCardComponent implements OnInit {
   faPhone = faPhone;
   faAt = faAt;
   faRoad = faRoad;
+  faEye=faEye;
 
   habitacion:Habitacion=new Habitacion();
   constructor(private habitacionService:HabitacionService, private activatedRoute:ActivatedRoute) { }

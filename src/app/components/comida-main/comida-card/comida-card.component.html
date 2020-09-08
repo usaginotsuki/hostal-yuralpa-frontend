@@ -1,1 +1,67 @@
-<p>comida-card works!</p>
+<div class="col-12" style="text-align: center;">
+    <div class="breadcumb-area bg-img">		
+        <div class="bradcumbContent">
+            <h2>{{comida.comida}} - Dia: {{comida.fecha}}</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container container-fluid"><br>
+    <div class="row">
+        <div class="col-12 d-flex justify-content-around">
+            <div class="media">
+                <div class="media-body">
+                    <small class="media-heading">Descripcion</small><br>
+                    <p class="h6"><strong>{{comida.comida}}</strong></p>
+                </div>
+            </div>  
+            <div class="media">
+                <div class="media-body">
+                    <small class="media-heading">Fecha</small><br>
+                    <p class="h6"><strong>{{comida.fecha}}</strong></p>
+                </div>
+            </div>        
+            <div class="media">
+                <div class="media-body">
+                    <small class="media-heading">Observaciones</small><br>
+                    <p class="h6"><strong>{{comida.observaciones}}</strong></p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+<hr>
+
+</div>    
+<div class="container" style="text-align: center; background-color:floralwhite;">
+    <div class="row">
+        <table class="table ">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col"># de Cuarto</th>
+                    <th scope="col">Fecha de Salida</th>
+                    <th scope="col">Observaciones</th>
+                    <th scope="col"> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of comida.acomms; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.num_cuarto}}</td>
+                    <td>{{item.fecha_salida}}</td>
+                    <td>{{item.observaciones}}</td>
+                    <td class="btn-group">
+                        <button class="btn btn-sm btn-info" [routerLink]="['/acomm', item.idhabitacion]"><fa-icon [icon]='faEye'></fa-icon></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+  
+  
+
+

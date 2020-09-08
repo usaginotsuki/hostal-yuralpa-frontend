@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { faUserCircle,faGlobe, faPhone,faSave,faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faUserCircle,faGlobe, faPhone,faSave,faTimes, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { HabitacionService } from '../../../core/services/habitacion.service';
 import { Habitacion } from '../../../shared/models/habitacion';
@@ -21,6 +21,7 @@ export class HabitacionFormComponent implements OnInit {
   faPhone=faPhone;
   faSave=faSave;
   faTimes=faTimes;
+  faTrash=faTrash;
   formHabitacion:FormGroup;
 
   submitted = false;
@@ -61,7 +62,6 @@ export class HabitacionFormComponent implements OnInit {
 
       }
     );
-    this.UserService.list(1,1000).subscribe
   }
 
   onReset():void{
@@ -111,16 +111,45 @@ export class HabitacionFormComponent implements OnInit {
     
   }
 
+  delete(usuario:Usuario){
+  let j=0;
+  
+  for(let i in this.habitacion.usuario){
+    
+    if(this.habitacion.usuario[i]==usuario){
+          this.habitacion.usuario.splice(j,1);  
+    }
+    j++;
+  }
+  }
   addUser($event){ //Vincula un evento Output de otro componente
-    console.log($event);
     //Nuevo participante del proyecto
+    let isNot:Boolean=true;
     let newUser = new Usuario();
-    newUser.identification=$event.identification;
-    newUser.nombre = $event.nombre;
-    newUser.apellido = $event.apellido;        
-    newUser.prefijo = $event.prefijo;   
-    newUser.telefono = $event.telefono;
-    this.habitacion.usuario.push(newUser);
+    for(let i of this.habitacion.usuario){
+      if(i.idusuario==$event.idusuario){
+        isNot=false;
+        let timerInterval;
+          swal.fire({
+            title: 'Usuario añadido previamente',
+            timer:1000,
+            timerProgressBar:true,     
+            onClose: () => {
+              clearInterval(timerInterval)
+            }
+          })
+      }
+    }
+    if(isNot){
+      newUser.identification=$event.identification;
+      newUser.nombre = $event.nombre;
+      newUser.apellido = $event.apellido;        
+      newUser.prefijo = $event.prefijo;   
+      newUser.telefono = $event.telefono;
+      newUser.idusuario=$event.idusuario;
+      this.habitacion.usuario.push(newUser);
+    }
+    
   }
 
   

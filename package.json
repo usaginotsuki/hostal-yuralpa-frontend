@@ -43,6 +43,7 @@
     "ngx-pagination": "^5.0.0",
     "rxjs": "^6.5.5",
     "rxjs-compat": "^6.6.0",
+    "svg-country-flags": "^1.2.7",
     "sweetalert2": "^9.17.0",
     "tslib": "^2.0.0",
     "world-countries": "^4.0.0",

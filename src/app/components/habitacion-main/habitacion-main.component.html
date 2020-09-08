@@ -6,17 +6,25 @@
       </div>   
     </div>
   <hr/>
-  <div class="row">
-      <app-habitacion-list [flagToReload]="mainReload"
-       (reloadComplete)="reloadDone($event)"
-       (userToEdit)="mainUpdate($event)"
-       ></app-habitacion-list>
-      <hr>
-     <app-habitacion-form [habitacion]="mainHabitacion" 
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <app-habitacion-list [flagToReload]="mainReload"
+        (reloadComplete)="reloadDone($event)"
+        (userToEdit)="mainUpdate($event)"
+        ></app-habitacion-list>
+      </div>
+      <div class="col-4">
+        <app-habitacion-form [habitacion]="mainHabitacion" 
       [title]="mainTitle" 
       (flagToReload)="reloadToDo($event)"
       ></app-habitacion-form>
 
+      </div>
+    </div>
+      
+      <hr>
+     
   <hr>
 
   </div>

@@ -34,11 +34,17 @@
                 <input formControlName="detalle" [(ngModel)]="servicio.detalle" [ngClass]="{'is-invalid': submitted && f.detalle.errors }" type="text" class="form-control form-control-user" placeholder="Detalle">
             </div>
         </div>
-        <div class="input-group-md-3">
+        
+        <hr>
+        <div class="input-group-mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text"><fa-icon [icon]="faPhone"></fa-icon></span>
-            
-                <input formControlName="idhabitacion" [(ngModel)]="servicio.idhabitacion" [ngClass]="{'is-invalid': submitted && f.idhabitacion.errors }" type="text" class="form-control form-control-user" placeholder="idhabitacion">
+                <span class="input-group-text"><fa-icon [icon]="faUserCircle"></fa-icon></span>                        
+                <div class="btn-group mr-12">
+                    <select  class="form-control" formControlName="num_habitacion" [(ngModel)]="servicio.num_habitacion" [ngClass]="{'is-invalid': submitted && f.num_habitacion.errors }" placeholder="Num de cuarto">
+                    <option disabled>--Numero de habitacion--</option>
+                    <option *ngFor="let item of habs; let i=index">{{habs[i]}}</option>
+                </select>
+            </div>
             </div>
         </div>
         <br>

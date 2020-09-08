@@ -1,15 +1,14 @@
 <h5>Listado de Comidas</h5>
 <br>
 <table class="table">
-
-    <thead>
+    <thead class="thead-dark">
         <tr>
-            <td>#</td>
-            <td>Fecha</td>
-            <td>Comida</td>
-            <td>Costo</td>
-            <td>Observaciones</td>
-            <td></td>
+            <th>#</th>
+            <th>Fecha</th>
+            <th>Comida</th>
+            <th>Costo</th>
+            <th>Observaciones</th>
+            <th><button class="btn btn-sm btn-info" [routerLink]="['/meal/form']"><fa-icon [icon]='faPlus'></fa-icon> Agregar registro</button></th>
         </tr>
     </thead>
     <tbody>
