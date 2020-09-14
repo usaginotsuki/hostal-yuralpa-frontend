@@ -42,6 +42,8 @@ import { UsuarioSearchComponent } from './components/usuario-main/usuario-search
 import { ComidaStatisticsComponent } from './components/comida-main/comida-statistics/comida-statistics.component';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { NgxChartsModule }from '@swimlane/ngx-charts';
+import { StatsComponent } from './components/stats/stats.component';
+import { CuartoStatisticsComponent } from './components/cuarto-main/cuarto-statistics/cuarto-statistics.component';
 
 
 const routes:Routes=[
@@ -79,6 +81,8 @@ const routes:Routes=[
     UsuarioStatisticsComponent,
     UsuarioSearchComponent,
     ComidaStatisticsComponent,
+    StatsComponent,
+    CuartoStatisticsComponent,
    
   
   ],

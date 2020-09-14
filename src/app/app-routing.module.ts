@@ -20,10 +20,13 @@ import { ServiceCardComponent } from './components/service-main/service-card/ser
 import { ServiceMainComponent } from './components/service-main/service-main.component';
 import { UsuarioStatisticsComponent } from './components/usuario-main/usuario-statistics/usuario-statistics.component';
 import { ComidaStatisticsComponent } from './components/comida-main/comida-statistics/comida-statistics.component';
+import { StatsComponent } from './components/stats/stats.component';
+import { CuartoStatisticsComponent } from './components/cuarto-main/cuarto-statistics/cuarto-statistics.component';
 
 
 const routes: Routes = [
   {path:'',redirectTo:'/',pathMatch:'full'},
+  {path: 'room/stats', component: CuartoStatisticsComponent},
   {path: 'meal/stats', component: ComidaStatisticsComponent},
   {path: 'user', component: UsuarioMainComponent},
   {path: 'user/statistics', component: UsuarioStatisticsComponent},
@@ -39,7 +42,7 @@ const routes: Routes = [
   {path: 'acomm/:id', component: HabitacionCardComponent},
   {path: 'service/:id', component: ServiceCardComponent},
   {path: 'service', component: ServiceMainComponent},
-
+  {path: 'stats', component: StatsComponent}
 ];
 
 @NgModule({

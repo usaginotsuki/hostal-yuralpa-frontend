@@ -33,7 +33,7 @@ export class UsuarioStatisticsComponent implements OnInit {
   }
   getNaciones():void{
     console.log("inicio naciones");
-    console.log(this.usuarios.length)
+    
     for (var i in this.usuarios){
       this.nacionalidades[i]=this.usuarios[i].nacionalidad
     }
