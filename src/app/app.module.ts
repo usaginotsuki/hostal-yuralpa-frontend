@@ -40,6 +40,8 @@ import { UsuarioStatisticsComponent } from './components/usuario-main/usuario-st
 import { ChartsModule } from 'ng2-charts';
 import { UsuarioSearchComponent } from './components/usuario-main/usuario-search/usuario-search.component';
 import { ComidaStatisticsComponent } from './components/comida-main/comida-statistics/comida-statistics.component';
+import { GoogleChartsModule } from 'angular-google-charts';
+import { NgxChartsModule }from '@swimlane/ngx-charts';
 
 
 const routes:Routes=[
@@ -76,11 +78,12 @@ const routes:Routes=[
     ServiceCardComponent,
     UsuarioStatisticsComponent,
     UsuarioSearchComponent,
-    ComidaStatisticsComponent
-
+    ComidaStatisticsComponent,
+   
   
   ],
   imports: [ 
+    GoogleChartsModule,
     MatSelectCountryModule,
     MbscModule, 
     BrowserModule,
@@ -101,7 +104,8 @@ const routes:Routes=[
            
     }),
     NoopAnimationsModule,
-    ChartsModule
+    ChartsModule,
+    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

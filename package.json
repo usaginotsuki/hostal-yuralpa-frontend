@@ -28,6 +28,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@mobiscroll/angular": "https://npm.mobiscroll.com/@mobiscroll/angular-trial/-/angular-trial-4.10.6.tgz",
     "@popperjs/core": "^2.4.4",
+    "@swimlane/ngx-charts": "^16.0.0",
     "angular-countries": "^1.1.5",
     "angular-google-charts": "^1.1.6",
     "angular2-countrypicker": "^1.0.0",
