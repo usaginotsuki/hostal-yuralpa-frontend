@@ -39,6 +39,7 @@ import { MatSelectCountryModule } from '@angular-material-extensions/select-coun
 import { UsuarioStatisticsComponent } from './components/usuario-main/usuario-statistics/usuario-statistics.component';
 import { ChartsModule } from 'ng2-charts';
 import { UsuarioSearchComponent } from './components/usuario-main/usuario-search/usuario-search.component';
+import { ComidaStatisticsComponent } from './components/comida-main/comida-statistics/comida-statistics.component';
 
 
 const routes:Routes=[
@@ -74,7 +75,8 @@ const routes:Routes=[
     ServiceFormComponent,
     ServiceCardComponent,
     UsuarioStatisticsComponent,
-    UsuarioSearchComponent
+    UsuarioSearchComponent,
+    ComidaStatisticsComponent
 
   
   ],

@@ -19,10 +19,12 @@ import { HabitacionCardComponent } from './components/habitacion-main/habitacion
 import { ServiceCardComponent } from './components/service-main/service-card/service-card.component';
 import { ServiceMainComponent } from './components/service-main/service-main.component';
 import { UsuarioStatisticsComponent } from './components/usuario-main/usuario-statistics/usuario-statistics.component';
+import { ComidaStatisticsComponent } from './components/comida-main/comida-statistics/comida-statistics.component';
 
 
 const routes: Routes = [
   {path:'',redirectTo:'/',pathMatch:'full'},
+  {path: 'meal/stats', component: ComidaStatisticsComponent},
   {path: 'user', component: UsuarioMainComponent},
   {path: 'user/statistics', component: UsuarioStatisticsComponent},
   {path: 'user/:id', component: UsuarioCardComponent},
@@ -37,7 +39,6 @@ const routes: Routes = [
   {path: 'acomm/:id', component: HabitacionCardComponent},
   {path: 'service/:id', component: ServiceCardComponent},
   {path: 'service', component: ServiceMainComponent},
-
 
 ];
 

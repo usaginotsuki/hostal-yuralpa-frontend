@@ -21,7 +21,12 @@
                         <h6>Comida: &nbsp;</h6>
                     </div>
                     <div class="col ml-1 ">													
-                        <input formControlName="comida" type="text" class="form-control" [(ngModel)]="comida.comida" [ngClass]="{'is-invalid': submitted && f.comida.errors}"/>
+                        <select formControlName="comida" class="form-control" [(ngModel)]="comida.comida" [ngClass]="{'is-invalid': submitted && f.comida.errors}">
+                            <option disabled>--Comida--</option>
+                            <option>Desayuno</option>
+                            <option>Almuerzo</option>
+                            <option>Merienda</option>
+                        </select>
                         <div class="invalid-feedback" *ngIf=" submitted && f.comida.errors" class="invalid-feedback">
                             <small *ngIf=" submitted && f.comida.errors.required">El nombre de la comida es requerido</small>
                         </div>													
